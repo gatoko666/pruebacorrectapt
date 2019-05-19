@@ -54,7 +54,7 @@
                         <a href="tiposdeturnos">Tipos de turno</a>
                     </li>
                     <li>
-                        <a href="/user/feriados/indexferiados">Feriados</a>
+                        <a href="indexferiados">Gestión Feriados</a>
                     </li>
                 </ul>
             </li>
@@ -108,55 +108,7 @@
                     </ul>
                 </li>
 
-                <!--podria ser util
-                <li>
-                        <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false">
-                            <i class="fas fa-laptop"></i>
-                            Pendiente
-                            <i class="fas fa-angle-down fa-pull-right"></i>
-                        </a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu3">
-                            <li>
-                                <a href="#">Cards</a>
-                            </li>
-                            <li>
-                                <a href="#">Carousels</a>
-                            </li>
-                            <li>
-                                <a href="#">Forms</a>
-                            </li>
-                            <li>
-                                <a href="#">Modals</a>
-                            </li>
-                            <li>
-                                <a href="#">Tables</a>
-                            </li>
-                        </ul>
-                    </li>
-                
-
-                    <li>
-                            <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false">
-                                <i class="fas fa-chart-bar"></i>
-                                Estadísticas
-                                <i class="fas fa-angle-down fa-pull-right"></i>
-                            </a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu4">
-                                <li>
-                                    <a href="estadisticasturnos">Turnos</a>
-                                </li>
-                                <li>
-                                    <a href="estadisticasfestivos">Festivos & noches</a>
-                                </li>
-                               
-                                <li>
-                                    <a href="estadisticasabsentismos">Absentismos</a>
-                                </li>
-                              
-                            </ul>
-                        </li>
-
-                    -->
+              
 
                         <li>
                                 <a href="#homeSubmenu5" data-toggle="collapse" aria-expanded="false">

@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('index', function () {
+    return view('index');
+});
+ 
+
+
+/*
+Route::get('indexferiados', function() {
+    return view('feriados.indexferiado');
+});
+*/
+
+
+
+Route::resource('feriados','FeriadoController');
+/*
+Route::get('editarferiado', function () {
+    return view('editarferiado');
+});
+ 
+ */
