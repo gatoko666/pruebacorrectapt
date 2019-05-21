@@ -16,7 +16,7 @@ class Feriado extends Model
         'FechaDiaFeriado', 'DescripcionFeriado', 'TipoDetalleEspecial', 'RepetirFeriado'
     ];
 
-    public $timestamps = false;
+ 
 
   
 

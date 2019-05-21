@@ -21,11 +21,11 @@
             </a>
             <ul class="collapse list-unstyled" id="homeSubmenu0">
                 <li>
-                    <a href="admintrabajadores">Administrar trabajadores</a>
+                    <a href="operadores">Administrar trabajadores</a>
                 </li>                   
                 
                 <li>
-                    <a href="trabajadoresexternos">Externos</a>
+                    <a href="operadorexternos">Administrar trabajadores Externos</a>
                 </li>
             </ul>
         </li>
@@ -54,7 +54,7 @@
                         <a href="tiposdeturnos">Tipos de turno</a>
                     </li>
                     <li>
-                        <a href="indexferiados">Gestión Feriados</a>
+                        <a href="feriados">Gestión Feriados</a>
                     </li>
                 </ul>
             </li>
@@ -118,10 +118,10 @@
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu5">
                                     <li>
-                                        <a href="uploadfile">Subir archivo</a>
+                                        <a href="subirdocumentos">Subir archivo</a>
                                     </li>
                                     <li>
-                                        <a href="checkfile">Revisar archivos</a>
+                                        <a href="listadodocumentos">Revisar archivos</a>
                                     </li>
                                     
                                 </ul>
@@ -129,7 +129,7 @@
 
 
         <li>
-            <a href="mailbox">
+            <a href="notificaciones">
                 <i class="far fa-envelope"></i>
                 Notificaciones
                 <span class="badge badge-secondary float-md-right bg-danger">5 New</span>

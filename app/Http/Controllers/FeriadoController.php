@@ -154,9 +154,9 @@ class FeriadoController extends Controller
 
                                                     $feriado->update($request->all());
                                                    
-                                                    
-                                                    return redirect()->route('feriados')
-                                                    ->with('success','Product updated successfully');
+                                                    return redirect('feriados')->with('success','Feriado updated correctamente');       
+                                                   // return redirect()->route('feriados')
+                                                 //   ->with('success','Product updated successfully');
 
 
                                                       }

@@ -46,11 +46,10 @@ estoy en la subcarpeta
                                     <label for="inputcomentario" class="col-sm-2 col-form-label">Repetir anualmente</label>
                                     <div class="col-sm-5">        
                                       <p align="justify"><select   size="1" name="RepetirFeriado"> 
-                                            <option value="  <?php $ta   ?>"> 
+                                            <option value="  <?php  echo $t = $feriado->RepetirFeriado;  ?>"> 
                                                     <?php
-                                                    $t = $feriado->RepetirFeriado;
-                                                    
-                                                    if ($t < "2") {
+                                                    $t = $feriado->RepetirFeriado;                                                    
+                                                    if ($t = "2") {
                                                         echo "si";
                                                     } else {
                                                         echo "no";
@@ -59,7 +58,7 @@ estoy en la subcarpeta
                                                     ?>
     
                                              </option>
-                                             <option value="  <?php $tb   ?>">                                                           
+                                             <option value=" <?php  echo $t = $feriado->RepetirFeriado;  ?>">                                                           
 
                                                     <?php
                                                     $t1 = $feriado->RepetirFeriado;
@@ -87,7 +86,7 @@ estoy en la subcarpeta
                                             <label for="inputcomentario" class="col-sm-2 col-form-label"  >Especial</label>
                                             <div class="col-sm-5">
                                                   <p align="justify"><select name="TipoDetalleEspecial" size="1">
-                                                        <option value="  <?php $ta   ?> "selected>
+                                                        <option value="  <?php echo $t = $feriado->TipoDetalleEspecial;  ?> "selected>
                                                                 <?php
                                                                 $t = $feriado->TipoDetalleEspecial;
                                                                 
@@ -98,23 +97,10 @@ estoy en la subcarpeta
                                                                 }
                                                                 ?>
 
-                                                        </option>
 
-                                                    <option value="   
-                                                    
-                                                    <?php
-                                                            $t1 = $feriado->TipoDetalleEspecial;
-                                                            $t2="si";
-                                                            $t3;
-                                                            if (strcmp ($t1,$t2)==0) 
-                                                            {
-                                                                echo "no";
-                                                            }else{
-                                                                echo "si";
-                                                            }
-                                                            ?>
-                                                    
-                                                    ">                                                           
+
+                                                        </option>
+                                                    <option value="  <?php echo $t = $feriado->TipoDetalleEspecial;  ?>   ">                                                         
 
                                                             <?php
                                                             $t1 = $feriado->TipoDetalleEspecial;
@@ -127,12 +113,7 @@ estoy en la subcarpeta
                                                                 echo "si";
                                                             }
                                                             ?>
-                                                        </option>
-
-
-
-
-                                                                                                                                                     
+                                                        </option>                                                                                                                                                    
                                                           </select> </p>                                        
                                             </div>
                                             </div>                    

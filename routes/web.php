@@ -33,6 +33,31 @@ Route::resource('feriados','FeriadoController');
 /*
 Route::get('editarferiado', function () {
     return view('editarferiado');
+    
+});
+ */
+
+Route::resource('operadores','OperadorController');
+
+Route::resource('operadorexternos','OperadorExternoController');
+
+Route::resource('tiposdeturnos','TiposDeTurnosController');
+
+Route::get('perfil', function () {
+    return view('perfil/indexperfil');
 });
  
- */
+
+Route::get('notificaciones', function () {
+    return view('notificaciones/indexnotificaciones');
+});
+ 
+
+Route::get('subirdocumentos', function () {
+    return view('subirdocumentos/indexsubirdocumentos');
+});
+ 
+
+Route::get('listadodocumentos', function () {
+    return view('subirdocumentos/listadodocumentos');
+});
