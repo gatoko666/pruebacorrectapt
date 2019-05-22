@@ -1,62 +1,131 @@
-<style>
-        .uper {
-          margin-top: 40px;
-        }
-      </style>
-      <div class="card uper">
-        <div class="card-header">
-          Edit Book
+
+    @include('partials/header')    
+    <body>
+        <div class="se-pre-con"></div>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->           
+            @include('partials/sidebar')
+            <!-- Page Content Holder -->
+            @include('partials/menu')
+                <!--// top-bar -->
+
+
+                
+
+         <section class="grids-section bd-content">
+                <!-- Grids Info -->
+                <div class="outer-w3-agile mt-3">
+                    <h4 class="tittle-w3-agileits mb-4">Editar  Operadores Externos </h4>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br />
+                    @endif
+                      <br>
+                      @if ($message = Session::get('success'))
+                      <div class="alert alert-success">
+                          <p>{{ $message }}</p>
+                      </div>
+                  @endif     
+                    <br>
+                    <form method="post" action="{{ route('feriados.update', $feriado->IdDetalleFeriado) }}">
+                        <div class="form-group">
+                            @csrf
+                            @method('PATCH')
+                            <label for="name">Nombre Operador :</label>
+                            <input type="text" class="form-control" name="FechaDiaFeriado" value="{{$feriado->FechaDiaFeriado}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Apellido Operador  :</label>
+                            <input type="text" class="form-control" name="DescripcionFeriado" value="{{$feriado->DescripcionFeriado}}"/>
+                        </div>
+                        <div class="form-group">
+                                <label for="price">Correo Operador  :</label>
+                                <input type="text" class="form-control" name="TipoDetalleEspecial" value="{{$feriado->TipoDetalleEspecial}}"/>
+                            </div>
+                            <div class="form-group">
+                                    <label for="price">Localización Operador  :</label>
+                                    <input type="text" class="form-control" name="RepetirFeriado" value="{{$feriado->RepetirFeriado}}"/>
+                                </div>
+                              
+                         
+                        <button type="submit" class="btn btn-primary">Actualizar Operador Externo</button>
+                    </form>
+
+
+
+                    
+                   
+                </div>
+         </section>      
+
+
+
+
+                       
+                                    </div><!-- /.modal-content -->                                    
+                                </div><!-- /.modal-dialog -->
+                                @include('partials/footer')
+                            </div><!-- /.modal -->   
+                <!--// Countdown -->
+                <!-- Copyright -->
+            </div>          
+                <!--// Copyright -->
+            </div>
         </div>
-        <div class="card-body">
-          @if ($errors->any())
-            <div class="alert alert-danger">
-              <ul>
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-            </div><br />
-          @endif
-
+            
+        <!-- Required common Js -->
+        <script src='js/jquery-2.2.3.min.js'></script>
+        <!-- //Required common Js -->
+        
+        <!-- loading-gif Js -->
+        <script src="js/modernizr.js"></script>
+        <script>
+            //paste this code under head tag or in a seperate js file.
+            // Wait for window load
+            $(window).load(function () {
+                // Animate loader off screen
+                $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+        <!--// loading-gif Js -->
+    
+        <!-- Sidebar-nav Js -->
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+        <!--// Sidebar-nav Js -->
+     
+    
+        <!-- dropdown nav -->
+        <script>
+            $(document).ready(function () {
+                $(".dropdown").hover(
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                        $(this).toggleClass('open');
+                    },
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                        $(this).toggleClass('open');
+                    }
+                );
+            });
+        </script>
+        <!-- //dropdown nav -->
+    
+        <!-- Js for bootstrap working-->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- //Js for bootstrap working -->
+    
+    </body>
+    
  
-
-
-      <form action="{{ route('feriados.update') }}" method="POST">
-          @csrf
-                    @method('PATCH')
-
-          <div class="form-group row">
-            <label for="inputdescripcion" class="col-sm-2 col-form-label">Descripción</label>
-            <div class="col-sm-5">
-              <input type="text" onfocus="this.value=' '"  class="form-control" name="DescripcionFeriado"  value="{{$feriado->DescripcionFeriado}}" id="inputdescripcion" placeholder="Descripción">
-            </div>
-          </div>     
-                                             
-            <div class="form-group row">
-            <label for="inputdesde" class="col-sm-2 col-form-label">Fecha</label>
-            <div class="col-sm-10">                                                                                        
-
-              <input id="datepicker" type="date" name="FechaDiaFeriado"   value="{{$feriado->FechaDiaFeriado}}" onfocus="this.value=' '"  width="276" />                                                                                                      
-          </div>
-            </div>
-             <div class="form-group row">
-                  <label for="inputcomentario" class="col-sm-2 col-form-label">Repetir anualmente</label>
-                  <div class="col-sm-5">        
-                    <p align="justify"><select   size="1" name="RepetirFeriado"> 
-                          <option value="1"selected>Si</option>
-                          <option value="2" >No</option>                                                                                                    
-                          </select> </p>                    
-                  </div>
-                  </div>                                                                                       
-            <div class="form-group row">
-            <label for="inputcomentario" class="col-sm-2 col-form-label"  >Especial</label>
-            <div class="col-sm-5">
-                  <p align="justify"><select name="TipoDetalleEspecial" size="1">
-                          <option value="1"selected>Si</option>
-                          <option value="2" >No</option>                                                                                                    
-                          </select> </p>                                        
-            </div>
-            </div>                                                                                            
-          </div>
-          <button type="submit" class="btn btn-primary ">Agregar</button>
-        </form>                              

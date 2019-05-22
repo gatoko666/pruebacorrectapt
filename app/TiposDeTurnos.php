@@ -10,7 +10,7 @@ class TiposDeTurnos extends Model
 
     protected $primaryKey = 'IdDetalleTipoTurno';
 
-    protected $fillable = [
+    protected $fillable = ['IdDetalleTipoTurno',
         'HoraInicioTurno', 'HoraTerminoTurno',
          'AbreviacionTurno', 'DescripcionDetalleTipoTurno'
         , 'IdTurnosÍndice'       

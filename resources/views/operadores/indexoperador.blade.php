@@ -107,48 +107,36 @@
                                         </th>
                                         <th class="text-center">
                                             Apellido 
-                                        <br>
-                                       
+                                        <br>                                       
                                     </th>
                                         <th class="text-center">
                                                 Rut 
-                                            <br>
-                                          
+                                            <br>                                          
                                         </th>
                                         <th class="text-center">
                                                 Correo 
-                                            <br>
-                                           
-                                        </th>
-                                       
-                                       
+                                            <br>                                           
+                                        </th>        
                                         <th class="text-center">
                                                 Estado 
-                                                <br>
-                                            
+                                                <br>                                            
                                             </th>
                                             <th class="text-center">
                                                     Fecha Alta
-                                                    <br>
-                                                
+                                                    <br>                                                
                                                 </th>
                                                 <th class="text-center">
                                                         Fecha Baja
-                                                        <br>
-                                                    
+                                                        <br>                                                    
                                                     </th>
                                                     <th class="text-center">
                                                         Localización
-                                                        <br>
-                                                    
+                                                        <br>                                                    
                                                     </th>
-
                                             <th class="text-center">
                                                     Acción
-                                                    <br>
-                                                
-                                                </th>
-                                       
+                                                    <br>                                                
+                                                </th>                                       
                                     </tr>
                         </thead>
                         <tbody>
@@ -163,12 +151,11 @@
                                 <td>{{$op->FechaBajaOperador}}</td>                               
                                 <td>{{$op->LocacionOperador}}</td>  
                                 <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"   data-target=".bd-example-modal-xl">
-                                            <a href="#fee-details1" data-toggle="modal">Editar</a>
+                                  
                                             <a href="{{ route('operadores.edit',$op)}}" class="btn btn-secondary">Editar</a> 
 
                                             
-                                          </button>  
+                                        
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
                                         Eliminar
                                       </button>   

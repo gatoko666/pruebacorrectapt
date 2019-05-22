@@ -13,7 +13,8 @@ class Feriado extends Model
     protected $primaryKey = 'IdDetalleFeriado';
 
     protected $fillable = [
-        'FechaDiaFeriado', 'DescripcionFeriado', 'TipoDetalleEspecial', 'RepetirFeriado'
+        'FechaDiaFeriado', 'DescripcionFeriado', 
+        'TipoDetalleEspecial', 'RepetirFeriado', 'created_at', 'updated_at'
     ];
 
  

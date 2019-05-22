@@ -44,25 +44,37 @@ class OperadorExternoController extends Controller
         
        $operadorexterno = OperadorExterno::findOrFail($IdOperadorExterno);
 
-       return view('operadorexternos.edit', compact('operadorexternos'));
+       return view('operadoresexternos.editartrabajadoresexternos', compact('operadorexterno'));
 
     }
-
-
-
-    public function update(Request $request, Operador $operador)
-    {
-        $request->validate([
-            'NombreOperador' => 'required',
-            'ApellidoOperador' => 'required',
-            'Correo' => 'required',
-            'RutOperador' => 'required',
-             
-        ]);
-        $operador->update($request->all());                           
-        return redirect('operadorexternos')->with('success','Operador updated correctamente');       
     
+
+
+    public function update(Request $request,  $IdOperadorExterno)
+    {       
+      
+        $validatedData = $request->validate([
+            'NombreOperadorEx' => '',
+            'ApellidoOperadorEX' => '',
+            'Password' => '',
+            'Correo' => '',
+            'TelefonoOperadorEX' => '',            
+            'EstadoCuentaOperadorEX' => '',
+            'FechaAltaOperadorEX' => '',
+            'FechaBajaOperadorEX' => '',
+            'IdAdministrador' => '',
+            'RutOperadorExterno' => '',
+            'LocalizacionExterno' => '',   
+            'IdTurnos' => '',  
+        ]);
+        OperadorExterno::where('IdOperadorExterno', $IdOperadorExterno)->update($validatedData);
+        return redirect('operadorexternos')->with('success', 'Operador Externo  is successfully updated');
           }
+
+
+
+ 
+
 
 
           public function destroy($IdOperadorExterno)

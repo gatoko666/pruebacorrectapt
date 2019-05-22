@@ -40,8 +40,7 @@ class TiposDeTurnosController extends Controller
 
 
     public function update(Request $request,  $IdDetalleTipoTurno)
-    {
-        
+    {       
       
         $validatedData = $request->validate([
             'HoraInicioTurno' => 'required',
@@ -50,11 +49,8 @@ class TiposDeTurnosController extends Controller
             'DescripcionDetalleTipoTurno' => 'required|max:50',
             'IdTurnos' => '',  
         ]);
-        TiposDeTurnos::whereId($IdDetalleTipoTurno)->update($validatedData);
+        TiposDeTurnos::where('IdDetalleTipoTurno', $IdDetalleTipoTurno)->update($validatedData);
         return redirect('tiposdeturnos')->with('success', 'Tipo de turno  is successfully updated');
-
-
-
           }
 
 

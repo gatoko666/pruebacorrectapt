@@ -119,12 +119,9 @@
 
                                         </td>
                                         <td>
-                                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal3">
-                                                    
-                                                        <a href="#fee-details1" data-toggle="modal">Editar</a>   
-                                                        <a href="{{ route('feriados.edit',$feriado ?? 0)}})}}" class="btn btn-secondary">Editar</a> 
-
-                                                      </button>  
+                                                   
+                                                <a href="{{ route('feriados.edit',$feriado)}}" class="btn btn-secondary">Editar</a> 
+                                                     
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
                                                     Eliminar
                                                   </button>

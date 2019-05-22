@@ -9,7 +9,7 @@ class OperadorController extends Controller
 {
     public function index()
                         {
-                            $detalleoperador = Operador:: paginate(3);                                
+                            $detalleoperador = Operador:: paginate(10);                                
 
                                 return view('operadores/indexoperador', compact('detalleoperador'));
                        
@@ -45,26 +45,29 @@ class OperadorController extends Controller
                         {
                             
                            $operador = Operador::findOrFail($IdOperador);
-
-                           return view('operadores.edit', compact('operador'));
-  
+                    
+                           return view('operadores.editartrabajadores', compact('operador'));
+                    
                         }
+                        
 
-
-
-                        public function update(Request $request, Operador $operador)
-                        {
-                            $request->validate([
+                        public function update(Request $request,  $IdOperador)
+                        {       
+                          
+                            $validatedData = $request->validate([
                                 'NombreOperador' => 'required',
                                 'ApellidoOperador' => 'required',
                                 'Correo' => 'required',
-                                'RutOperador' => 'required',
-                                 
+                                'LocacionOperador' => 'required',
                             ]);
-                            $operador->update($request->all());                           
-                            return redirect('operadores')->with('success','Operador updated correctamente');       
-                        
+                            Operador::where('IdOperador', $IdOperador)->update($validatedData);
+                            return redirect('operadores')->with('success', 'Operador Externo  is successfully updated');
                               }
+
+                              
+
+
+ 
 
 
                               public function destroy($IdOperador)

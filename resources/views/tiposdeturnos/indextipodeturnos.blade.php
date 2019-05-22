@@ -63,41 +63,30 @@
                                                       </button> 
                                                 <br>
                                             
-                                            </th>
-                                       
+                                            </th>                                      
                                     </tr>
-                                </thead>
-
-                        
+                                </thead>                        
                         <thead>
-                            <tr>
-                                
+                            <tr>                                
                                 <th class="text-center">
                                     Abreviatura
-                                    <br>
-                                   
+                                    <br>                                   
                                 </th>
                                 <th class="text-center">
                                     Descripción
-                                    <br>
-                                  
+                                    <br>                                  
                                 </th>
                                 <th class="text-center">
                                     Inicio
-                                    <br>
-                                   
-                                </th>
-                               
+                                    <br>                                   
+                                </th>                               
                                 <th class="text-center">
                                     Término
-                                    <br>
-                                
-                                </th>
-                               
+                                    <br>                                
+                                </th>                               
                                     <th class="text-center">
                                             Acción
-                                            <br>
-                                        
+                                            <br>                                        
                                         </th>
                                
                             </tr>
@@ -109,24 +98,15 @@
                                 <td>{{$dtt->DescripcionDetalleTipoTurno}}</td>
                                 <td>{{$dtt->HoraInicioTurno}}</td>
                                 <td>{{$dtt->HoraTerminoTurno}}</td>    
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"   data-target=".bd-example-modal-xl">
-                                            <a href="#fee-details1" data-toggle="modal">Editar</a>
-                                            <a href="{{ route('tiposdeturnos.edit',$dtt)}}" class="btn btn-secondary">Editar</a> 
-
-                                            
-                                          </button>  
+                                <td>          
+                                <a href="{{ route('tiposdeturnos.edit',$dtt)}}" class="btn btn-secondary">Editar</a>     
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
                                         Eliminar
                                       </button>   
-
                             </td>       
                             </tr>                                   
                             @endforeach   
-                            <tr>
-            
-                          
-
+                            <tr>    
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                                   <div class="modal-dialog" role="document">

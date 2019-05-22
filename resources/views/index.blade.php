@@ -1,497 +1,639 @@
-@include('partials/header')
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Adturn</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+    
+	<!-- banner slider css -->
+	<link href="cssindex/minimal-slider.css" rel='stylesheet' type='text/css' />
+	<!-- //banner slider css -->
+	
+	<!-- css files -->
+	<link rel="stylesheet" href="cssindex/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link href="cssindex/style6.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="cssindex/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="cssindex/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	
+	<!--web font-->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!--//web font-->
+
+</head>
+
 <body>
-    <div class="se-pre-con"></div>
-    <div class="wrapper">
+
+<!-- header -->
+<div class="header-top">
+	<header>
+		<div class="top-head ml-lg-auto text-center">
+			<div class="row mr-0">
+
+				<div class="col-lg-4">
+				</div>
+				<div class="col-md-3 col-4 sign-btn">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+						<i class="fas fa-lock"></i> Ingresar</a>
+				</div>
+				<div class="col-md-3 col-4 sign-btn">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter2">
+						<i class="fas fa-user"></i> Registrar</a>
+				</div>
+				<div class="search col-md-2 col-4">
+					<div class="mobile-nav-button">
+						<button id="trigger-overlay" type="button">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+					<!-- open/close -->
+					<div class="overlay overlay-door">
+						<button type="button" class="overlay-close">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</button>
+						<form action="#" method="post" class="d-flex">
+							<input class="form-control" type="search" placeholder="Ingrese búsqueda" required="">
+							<button type="submit" class="btn btn-primary submit">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+					</div>
+					<!-- open/close -->
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="logo">
+				<h1>
+					<a class="navbar-brand" href="#">
+						<i class="fab fa-cloudversify"></i> Adturn</a>
+				</h1>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">
+					<i class="fas fa-bars"></i>
+				</span>
+
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-lg-auto text-center">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="#">Carácteristicas</a>
+				</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Manual</a>
+					
+					<!--
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Pages
+							<i class="fas fa-angle-down"></i>
+						</a>
+						
+							Podria ser util
+							
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#" title="">About Us</a>
+							<a class="dropdown-item" href="#" title="">Projects</a>
+							<a class="dropdown-item" href="#">404 error page</a>
+						</div>
+					
+					</li>
+				
+					<li class="nav-item">
+						<a class="nav-link" href="#">Team</a>
+					</li>
+
+				-->
+					<li class="nav-item">
+					<a class="nav-link" href="#">Planes</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contacto</a>
+					</li>
+				</ul>
+
+			</div>
+		</nav>
+	</header>
+</div>
+<!-- header -->
+
+<!-- main image slider container -->
+<section class="slide-window">
+	<div class="slide-wrapper" style="width:300%;">
+		<div class="slide">
+			<div class="slide-caption text-center">
+			   <h2 class="text-uppercase">Información centralizada <span> </span></h2>
+			   <p class="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla,
+				gravida felis vitae. Phasellus lacinia id, sunt in culpa quis. Phasellus lacinia hasellus lacinia id erat culpa quis.</p>
+			   <div class="read">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+				</div>				
+			</div>
+		</div>
+		<div class="slide slide2">
+			<div class="slide-caption text-center">
+				<h3 class="text-uppercase">De fácil uso <span> </span></h3>
+			   <p class="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla,
+				gravida felis vitae. Phasellus lacinia id, sunt in culpa quis. Phasellus lacinia hasellus lacinia id erat culpa quis.</p>
+			   <div class="read">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+				</div>	
+			</div>
+		</div>
+		<div class="slide slide3">
+			<div class="slide-caption text-center">
+				<h3 class="text-uppercase">Mejor administración  <span> </span></h3>
+			   <p class="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla,
+				gravida felis vitae. Phasellus lacinia id, sunt in culpa quis. Phasellus lacinia hasellus lacinia id erat culpa quis.</p>
+			   <div class="read">
+					<a href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Read More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="slide-controller">
+		<div class="slide-control-left">
+			<div class="slide-control-line"></div>
+			<div class="slide-control-line"></div>
+		</div>
+		<div class="slide-control-right">
+			<div class="slide-control-line"></div>
+			<div class="slide-control-line"></div>
+		</div>
+	</div>
+</section>
+<!-- end of main image slider container -->
+	
+<!-- welcome 
+<section class="Welcome py-5">
+	<div class="container py-sm-5">
+		<div class="welcome-grids row">
+			<div class="col-lg-6 mb-lg-0 mb-5">
+				<h3 class="mt-lg-4">Phasellus lacinia id erat.</h3>
+				<p class="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla,
+				gravida felis vitae. Phasellus lacinia id, sunt in culpa quis. Phasellus lacinia</p>
+				<p class="mb-4">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum fringilla.</p>
+				<div class="read">
+					<a href="#">Click More <span class="btn ml-2"><i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+				</div>	
+			</div>
+			<div class="col-lg-3 col-md-4 col-6 pr-1 welcome-image">
+				<img src="imagesindex/a1.jpg" class="img-fluid" alt="" />
+			</div>	
+			<div class="col-lg-3 col-md-4 col-6 pl-1 welcome-image">
+				<img src="imagesindex/a2.jpg" class="img-fluid" alt="" />
+			</div>
+		</div>	
+	</div>	
+</section>
 
 
-        <!-- Sidebar Holder -->
-       
-        @include('partials/sidebar')
-        <!-- Page Content Holder -->
+<!-- welcome -->
 
+<!-- welcome bottom -->
+<section class="Welcome-bottom">
+	<div class="bs-slider-overlay">
+		<div class="container">
+			<div class="welcome-bottom-grids row">
+				
+				<!-- Counter -->
+				
+				<!-- //Counter -->
+				 
+			</div>	
+		</div>	
+	</div>	
+</section>
+<!-- //welcome bottom -->
 
-      @include('partials/menu')
-            <!--// top-bar -->
+<!-- Features -->
+<section class="features py-5">
+	<div class="container py-sm-5">
+		<div class="heading pb-4">
+			<h3 class="heading mb-2 text-center"> <span>  </span>  Carácteristicas de Adturn </h3>
+			<p class="para mb-5 text-center">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id.</p>
+		</div>
+		<div class="feature-grids row">
+			<div class="col-lg-4 col-md-6">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 1</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+				<div class="f2-active p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 2</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 3</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 4</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 5</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 6</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //Features -->
 
+<!-- Skills -->
+<section class="bottom-last">
+	<div class="bottom-bg py-5 bs-slider-overlay text-left">
+		<div class="container py-md-5">
+			<div class="heading pb-4">
+				<h3 class="heading mb-2 text-center text-white"> Manual </h3>
+				<p class="para mb-5 text-center">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id.</p>
+			</div>
+			<div class="row grids">
+				<div class="col-lg-6">
+					<h4 class="title">Proffessional Skills</h4>
+					<p class="my-4">Excepteur sint occaecat non proident, sunt in culpa quis. Int Phasellus lacinia id erat eu ullamcorper. 
+					Nunc id ipsum eur fringillats, gravida felis vitae. Phasellus lacinia id, sunt in culp quis. Phasellus lacinia. gravida felis vitae. 
+					Phasellus lacinia id. sunt inculpa quis. Phasellus lacinia. gravida felis vitae.</p>
+					<div class="bnr-button">
+						<button type="button" class="btn btn-primary play" data-toggle="modal" data-target="#exampleModal">
+							<i class="fas fa-play"></i> 
+						</button> <span class="text-white ml-2">Watch Video </span>
+					</div>
+				</div>
+				<div class="col-md-6 mt-lg-0 mt-5">
+					<div class="progress-one">
+						<h4 class="progress-tittle">Web Design</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="progress-one my-4">
+						<h4 class="progress-tittle">PHP Development</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="progress-one">
+						<h4 class="progress-tittle">Branding</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="progress-one my-4">
+						<h4 class="progress-tittle">Marketing</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					<div class="progress-one">
+						<h4 class="progress-tittle">Web Features</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+                </div>				
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //Skills -->
 
+<!-- team -->
+<!-- Features -->
+<section class="features py-5">
+	<div class="container py-sm-5">
+		<div class="heading pb-4">
+			<h3 class="heading mb-2 text-center"> Planes</h3>
+			<p class="para mb-5 text-center">Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id.</p>
+		</div>
+		<div class="feature-grids row">
+			<div class="col-lg-4 col-md-6">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 1</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+				<div class="f2-active p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 2</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 3</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 4</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 5</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-sm-5 mt-4">
+				<div class="f1 p-sm-5 p-4">
+					<i class="fas fa-arrow-right" aria-hidden="true"></i>
+					<h3 class="my-3">Feature 6</h3>
+					<p>Excepteur sint occaecat non proident, sunt in culpa quis. Phasellus lacinia id erat eu ullamcorper. Nunc id ipsum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //team -->
 
+<!-- brands -->
 
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Stats -->
-                    <div class="outer-w3-agile col-xl">
-                        <div class="stat-grid p-3 d-flex align-items-center justify-content-between bg-primary">
-                            <div class="s-l">
-                                <h5>Total trabajadores</h5>
-                                <p class="paragraph-agileits-w3layouts text-white">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>340
-                                    <i class="far fa-edit"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-success">
-                            <div class="s-l">
-                                <h5>Total Turnos publicados</h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>250
-                                    <i class="far fa-smile"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-danger">
-                            <div class="s-l">
-                                <h5>Total Festivos del año </h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>232
-                                    <i class="fas fa-tasks"></i>
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-warning">
-                            <div class="s-l">
-                                <h5>Total documentos subidos</h5>
-                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
-                            </div>
-                            <div class="s-r">
-                                <h6>190
-                                    <i class="fas fa-users"></i>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!--// Stats -->
-                    <!-- Pie-chart -->
-                    <div class="outer-w3-agile col-xl ml-xl-3 mt-xl-0 mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Absentismos</h4>
-                        <div id="chartdiv"></div>
-                    </div>
-                    <!--// Pie-chart -->
+<!-- //brands -->
+
+<!-- footer -->
+<footer class="footer py-5">
+	<div class="container py-sm-4">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 footer-top">
+				<h3 class="mb-4 pb-3 w3f_title">Suscríbete</h3>
+				<p>Enterate de todas nuestras noticias</p>
+				<form action="#" method="post">
+					<input type="email" name="Email" placeholder="Ingresa tu  email..." required="">
+					<button class="btn1"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+					<div class="clearfix"> </div>
+				</form>
+
+			</div>
+		
+			<div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
+				<h3 class="mb-4 pb-3 w3f_title">Contáctanos</h3>
+				<div class="fv3-contact">
+					<span class="fas fa-envelope-open mr-2"></span>
+					<p>
+						<a href="mailto:example@email.com">info@example.com</a>
+					</p>
+				</div>
+				<div class="fv3-contact my-3">
+					<span class="fas fa-phone-volume mr-2"></span>
+					<p>+1(23) 4567 7890</p>
+				</div>
+				<div class="fv3-contact">
+					<span class="fas fa-home mr-2"></span>
+					<p>321 Block,4th Building,
+						<br>2nd Street State 3489.</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 footerv2-w3ls mt-lg-0 mt-5">
+				<h3 class="mb-4 w3f_title pb-3">Siguenos en nuestras redes sociales</h3>
+				<p>Excepteur sint occaecat non proident, sunt in culpa qui.</p>
+				<ul class="social-iconsv2 agileinfo mt-4">
+					<li>
+						<a href="#">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-google-plus-g"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //footer bottom -->
+</footer>
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="cpy-right text-center">
+	<p>© Proyecto de título Adturn 2019.
+		<a href="#"></a>
+	</p>
+</div>
+<!-- //copyright -->
+
+	<!--model-forms-->
+    <!--/Login-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-           
-            <!--// Simple-chart -->
+                <div class="modal-body">
 
-            <!--// Bar-Chart -->
-           
-            <!--// Bar-Chart -->
-
-            <!--// three-grids -->
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Calender -->
-                    <div class="outer-w3-agile col-xl mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Calendario</h4>
-                        <div class="multi-select-calender"></div>
-                        <div class="box"></div>
-                    </div>
-                    <!--// Calender -->
-                    <!-- Profile -->
-                    <div class="outer-w3-agile col-xl mt-3 mx-xl-3 p-xl-0 px-md-5">
-                        <div class="header">
-                            <div class="text">
-                                <img src="images/profile.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                                <h2>Matthew Scott</h2>
-                                <a href="mailto:info@example.com">
-                                    <p>@Lorem ipsum</p>
-                                </a>
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Acceder al sitio</h5>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label class="mb-2">Dirección de correo</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
+                                <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
-                        </div>
-                        <div class="container-flud">
-                            <div class="followers row">
-                                <div class="f-left col">
-                                    <a href="#">
-                                        <i class="far fa-comments"></i>
-                                    </a>
-                                </div>
-                                <div class="f-left col border-left border-right">
-                                    <a href="#">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                                <div class="f-left col">
-                                    <a href="#">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                </div>
+                            <div class="form-group">
+                                <label class="mb-2">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
                             </div>
-                        </div>
-                        <ul class="prof-widgt-content">
-                            <li class="menu">
-                                <ul>
-                                    
-                                    <li class="dropdown">
-                                        <ul class="icon-navigation">
-                                            <li>
-                                                <a href="#">Inbox
-                                                    <span class="float-right">[09]</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Outbox
-                                                    <span class="float-right">[01]</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sent messages
-                                                    <span class="float-right">[03]</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu">
-                                <ul>
-                                    <li class="button">
-                                        <a href="#">
-                                            <i class="fas fa-user"></i> Perfil</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <ul class="icon-navigation">
-                                            <li>
-                                                <a href="#">Cambiar imagen</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Cambiar nombre usuario</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">About us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Contact me</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit mb-4">Ingresar</button>
+                             
+                        </form>
                     </div>
-                    <!--// Profile -->
-                    <!-- Browser stats -->
-                    <div class="outer-w3-agile col-xl mt-3">
-                        <h4 class="tittle-w3-agileits mb-4">Estadísticas </h4>
-                        <div class="stats-info stats-body">
-                            <ul class="list-unstyled">
-                                <li class="pb-3">GoogleChrome
-                                    <span class="float-right">85%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar green" style="width:85%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Firefox
-                                    <span class="float-right">35%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar yellow" style="width:35%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Internet Explorer
-                                    <span class="float-right">78%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar red" style="width:78%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Safari
-                                    <span class="float-right">50%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar blue" style="width:50%;"></div>
-                                    </div>
-                                </li>
-                                <li class="py-md-4 py-3">Opera
-                                    <span class="float-right">80%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar light-blue" style="width:80%;"></div>
-                                    </div>
-                                </li>
-                                <li class="last py-md-4 py-3">Others
-                                    <span class="float-right">60%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar orange" style="width:60%;"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--// Browser stats -->
                 </div>
+
             </div>
-            <!--// Three-grids -->
-            <!-- Countdown -->
-            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
-                <h4 class="tittle-w3-agileits mb-4 text-white">Hora actual del servidor</h4>
-                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
-            </div>
-            <!--// Countdown -->
-            <!-- Copyright -->
-
-            @include('partials/footer')
-
-
-
-            <!--// Copyright -->
         </div>
     </div>
+    <!--//Login-->
+    <!--/Register-->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="login px-4 mx-auto mw-100">
+                        <h5 class="text-center mb-4">Registrar</h5>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label>Nombre</label>
 
+                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Apellido</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
+                            </div>
 
-    <!-- Required common Js -->
-    <script src='js/jquery-2.2.3.min.js'></script>
-    <!-- //Required common Js -->
-    
-    <!-- loading-gif Js -->
-    <script src="js/modernizr.js"></script>
-    <script>
-        //paste this code under head tag or in a seperate js file.
-        // Wait for window load
-        $(window).load(function () {
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");;
-        });
-    </script>
-    <!--// loading-gif Js -->
+                            <div class="form-group">
+                                <label class="mb-2">Password</label>
+                                <input type="password" class="form-control" id="password1" placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmar Password</label>
+                                <input type="password" class="form-control" id="password2" placeholder="" required="">
+                            </div>
 
-    <!-- Sidebar-nav Js -->
-    <script>
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
-    <!--// Sidebar-nav Js -->
+                            <button type="submit" class="btn btn-primary submit mb-4">Registrar</button>
+                            <p class="text-center pb-4">
+                              
+                            </p>
+                        </form>
 
-    <!-- Graph -->
-    <script src="js/SimpleChart.js"></script>
-    <script>
-        var graphdata4 = {
-            linecolor: "Random",
-            title: "Thursday",
-            values: [{
-                    X: "6",
-                    Y: 300.00
-                },
-                {
-                    X: "7",
-                    Y: 101.98
-                },
-                {
-                    X: "8",
-                    Y: 140.00
-                },
-                {
-                    X: "9",
-                    Y: 340.00
-                },
-                {
-                    X: "10",
-                    Y: 470.25
-                },
-                {
-                    X: "11",
-                    Y: 180.56
-                },
-                {
-                    X: "12",
-                    Y: 680.57
-                },
-                {
-                    X: "13",
-                    Y: 740.00
-                },
-                {
-                    X: "14",
-                    Y: 800.89
-                },
-                {
-                    X: "15",
-                    Y: 420.57
-                },
-                {
-                    X: "16",
-                    Y: 980.24
-                },
-                {
-                    X: "17",
-                    Y: 1080.00
-                },
-                {
-                    X: "18",
-                    Y: 140.24
-                },
-                {
-                    X: "19",
-                    Y: 140.58
-                },
-                {
-                    X: "20",
-                    Y: 110.54
-                },
-                {
-                    X: "21",
-                    Y: 480.00
-                },
-                {
-                    X: "22",
-                    Y: 580.00
-                },
-                {
-                    X: "23",
-                    Y: 340.89
-                },
-                {
-                    X: "0",
-                    Y: 100.26
-                },
-                {
-                    X: "1",
-                    Y: 1480.89
-                },
-                {
-                    X: "2",
-                    Y: 1380.87
-                },
-                {
-                    X: "3",
-                    Y: 1640.00
-                },
-                {
-                    X: "4",
-                    Y: 1700.00
-                }
-            ]
-        };
-        $(function () {
-            $("#Hybridgraph").SimpleChart({
-                ChartType: "Hybrid",
-                toolwidth: "50",
-                toolheight: "25",
-                axiscolor: "#E6E6E6",
-                textcolor: "#6E6E6E",
-                showlegends: false,
-                data: [graphdata4],
-                legendsize: "140",
-                legendposition: 'bottom',
-                xaxislabel: 'Hours',
-                title: 'Weekly Profit',
-                yaxislabel: 'Profit in $'
-            });
-        });
-    </script>
-    <!--// Graph -->
-    <!-- Bar-chart -->
-    <script src="js/rumcaJS.js"></script>
-    <script src="js/example.js"></script>
-    <!--// Bar-chart -->
-    <!-- Calender -->
-    <script src="js/moment.min.js"></script>
-    <script src="js/pignose.calender.js"></script>
-    <script>
-        //<![CDATA[
-        $(function () {
-            $('.calender').pignoseCalender({
-                select: function (date, obj) {
-                    obj.calender.parent().next().show().text('You selected ' +
-                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
-                        '.');
-                }
-            });
+                    </div>
+                </div>
 
-            $('.multi-select-calender').pignoseCalender({
-                multiple: true,
-                select: function (date, obj) {
-                    obj.calender.parent().next().show().text('You selected ' +
-                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
-                        '~' +
-                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
-                        '.');
-                }
-            });
-        });
-        //]]>
-    </script>
-    <!--// Calender -->
+            </div>
+        </div>
+    </div>
+    <!--//Register-->
+    <!--//model-form-->
 
-    <!-- profile-widget-dropdown js-->
-    <script src="js/script.js"></script>
-    <!--// profile-widget-dropdown js-->
+	<!-- video Modal Popup -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Introduction Video</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body video">
+					<iframe src="https://player.vimeo.com/video/33531612"></iframe>
 
-    <!-- Count-down -->
-    <script src="js/simplyCountdown.js"></script>
-    <link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
-    <script>
-        var d = new Date();
-        simplyCountdown('simply-countdown-custom', {
-            year: d.getFullYear(),
-            month: d.getMonth() + 2,
-            day: 25
-        });
-    </script>
-    <!--// Count-down -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //video Model Popup -->
 
-    <!-- pie-chart -->
-    <script src='js/amcharts.js'></script>
-    <script>
-        var chart;
-        var legend;
+	<!-- Vertically centered Modal -->
+	<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-capitalize text-center" id="exampleModalLongTitle"><i class="fab fa-cloudversify"></i> Flex Art</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<div class="modal-body">
+				<img src="imagesindex/bg.jpg" class="img-fluid mb-3" alt="Modal Image" />
+				Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum,
+				ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<!-- //Vertically centered Modal -->
 
-        var chartData = [{
-                country: "Lithuania",
-                value: 260
-            },
-            {
-                country: "Ireland",
-                value: 201
-            },
-            {
-                country: "Germany",
-                value: 65
-            },
-            {
-                country: "Australia",
-                value: 39
-            },
-            {
-                country: "UK",
-                value: 19
-            },
-            {
-                country: "Latvia",
-                value: 10
-            }
-        ];
-
-        AmCharts.ready(function () {
-            // PIE CHART
-            chart = new AmCharts.AmPieChart();
-            chart.dataProvider = chartData;
-            chart.titleField = "country";
-            chart.valueField = "value";
-            chart.outlineColor = "";
-            chart.outlineAlpha = 0.8;
-            chart.outlineThickness = 2;
-            // this makes the chart 3D
-            chart.depth3D = 20;
-            chart.angle = 30;
-
-            // WRITE
-            chart.write("chartdiv");
-        });
-    </script>
-    <!--// pie-chart -->
+	<!-- js -->
+	<script src="jsindex/jquery-2.1.4.min.js"></script>
+	<script src="jsindex/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->
+	
+	<!-- search overlay -->
+    <script src="jsindex/modernizr-2.6.2.min.js"></script> 
+	<!-- //search overlay -->
+	
+	<!--search jQuery-->
+    <script src="jsindex/classie-search.js"></script>
+    <script src="jsindex/demo1-search.js"></script>
+    <!--//search jQuery-->
 
     <!-- dropdown nav -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".dropdown").hover(
-                function () {
+                function() {
                     $('.dropdown-menu', this).stop(true, true).slideDown("fast");
                     $(this).toggleClass('open');
                 },
-                function () {
+                function() {
                     $('.dropdown-menu', this).stop(true, true).slideUp("fast");
                     $(this).toggleClass('open');
                 }
@@ -500,9 +642,53 @@
     </script>
     <!-- //dropdown nav -->
 
-    <!-- Js for bootstrap working-->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- //Js for bootstrap working -->
+	<!-- banner slider js -->
+	<script src="jsindex/minimal-slider.js"></script>
+	<!-- //banner slider js -->
+
+	<!-- Stats-Number-Scroller-Animation-JavaScript -->
+	<script src="jsindex/waypoints.min.js"></script> 
+	<script src="jsindex/counterup.min.js"></script> 
+	<script>
+		jQuery(document).ready(function( $ ) {
+			$('.counter').counterUp({
+				delay: 100,
+				time: 1000
+			});
+		});
+	</script>
+	<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+	<!-- start-smoth-scrolling -->
+	<script src="jsindex/SmoothScroll.min.js"></script>
+	<script src="jsindex/move-top.js"></script>
+	<script src="jsindex/easing.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script>
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
 
 </body>
-
+</html>

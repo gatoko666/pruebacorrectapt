@@ -163,10 +163,9 @@
                                 <td>{{$opex->FechaBajaOperadorEX}}</td>                               
                                 <td>{{$opex->LocalizacionExterno}}</td>  
                                 <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"   data-target=".bd-example-modal-xl">
-                                            <a href="#fee-details1" data-toggle="modal">Editar</a>
+                                         
                                             <a href="{{ route('operadorexternos.edit',$opex)}}" class="btn btn-secondary">Editar</a>                                             
-                                          </button>  
+                                           
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
                                         Eliminar
                                       </button>   
