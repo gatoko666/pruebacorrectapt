@@ -96,10 +96,8 @@
                         <div class="header">
                             <div class="text">
                                 <img src="images/profile.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                                <h2>Matthew Scott</h2>
-                                <a href="mailto:info@example.com">
-                                    <p>@Lorem ipsum</p>
-                                </a>
+                                <h2>{{ Auth::user()->name }}</h2>
+                                <a href="mailto:info@example.com">{{ Auth::user()->email }}</a>
                             </div>
                         </div>
                         <div class="container-flud">

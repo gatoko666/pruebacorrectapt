@@ -70,7 +70,7 @@
                         <a href="revisarturnos">Revisar Turnos</a>
                     </li>
                     <li>
-                        <a href="solicitarcambioturno">Solicitar Cambio de turno</a>
+                        <a href="solicitarcambiodeturno">Solicitar Cambio de turno</a>
                     </li>
                     <li>
                         <a href="solicitarvacaciones">Solicitar Vacaciones</a>
@@ -96,13 +96,13 @@
                             <a href="registroturnos">Turnos y Horas</a>
                         </li>
                         <li>
-                            <a href="registroabsentamientos">Absentismos</a>
+                            <a href="absentismos">Absentismos</a>
                         </li>
                         <li>
-                            <a href="registroturnospendientes">Turnos pendientes</a>
+                            <a href="turnospendientes">Turnos pendientes</a>
                         </li>
                         <li>
-                            <a href="registrovacaciones">Vacaciones</a>
+                            <a href="vacaciones">Vacaciones</a>
                         </li>
                         
                     </ul>

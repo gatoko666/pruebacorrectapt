@@ -21,11 +21,7 @@
                 <div class="outer-w3-agile mt-3">
                     <h4 class="tittle-w3-agileits mb-4">Editar perfil </h4>
                           <br>
-                    <table class="table table-bordered table-striped">
-
-                        
-
-                        
+                    <table class="table table-bordered table-striped">                               
                         <thead>
                             <tr>
                                 
@@ -36,37 +32,29 @@
                                 </th>
                                 <th class="text-center">
                                     Información Personal
-                                    <br>
-                                  
-                                </th>
-                                
-                               
+                                    <br>                                  
+                                </th>      
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th class="text-nowrap" scope="row">
                                         <!--// upload file -->
-
                                         <form>
                                             <div class="form-group">
                                               <label for="exampleFormControlFile1">Subir documento</label>
-                                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                              
-                                              
-                                              <br>
-            
+                                              <input type="file" class="form-control-file" id="exampleFormControlFile1">      
+                                              <br>            
                                             </div>
                                           </form>
                                 </th>
                                 <td>
-
                                         <form>
                                           
                                                 <div class="form-group row">
                                                   <label for="inputdescripcion" class="col-sm-2 col-form-label">Nombre </label>
                                                   <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="inputdescripcion" placeholder="Nombre">
+                                                    <input type="text" class="form-control" id="inputdescripcion" placeholder="{{ Auth::user()->name }}">
                                                   </div>
                                                 </div>
 
@@ -79,7 +67,7 @@
                                                       <div class="form-group row">
                                                             <label for="inputdescripcion" class="col-sm-2 col-form-label">Correo</label>
                                                             <div class="col-sm-5">
-                                                              <input type="text" class="form-control" id="inputdescripcion" placeholder="Correo">
+                                                              <input type="text" class="form-control" id="inputdescripcion" placeholder="{{ Auth::user()->email }}">
                                                             </div>
                                                           </div>
                                                           <div class="form-group row">

@@ -639,44 +639,24 @@
                 <div class="modal-body">
                     <div class="login px-4 mx-auto mw-100">
                         <h5 class="text-center mb-4">Registrar</h5>
-						<form method="POST" action="{{ route('register') }}">
-							@csrf
+                        <form action="#" method="post">
                             <div class="form-group">
                                 <label>Nombre</label>
 
-								<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-								@error('name')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-								</span>
-							@enderror
+                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
                             </div>
                             <div class="form-group">
-								<label>Correo</label>
-								<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-							 
-								@error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <label>Apellido</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
                             </div>
 
                             <div class="form-group">
                                 <label class="mb-2">Password</label>
-								<input type="password" class="form-control" id="password"  placeholder=""  name="password" required autocomplete="new-password">
-								@error('password')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-								</span>
-							@enderror
-							</div>
-							
-
-
+                                <input type="password" class="form-control" id="password1" placeholder="" required="">
+                            </div>
                             <div class="form-group">
                                 <label>Confirmar Password</label>
-                                <input type="password" class="form-control" id="password-confirm" type="password" placeholder="" name="password_confirmation" required autocomplete="new-password">
+                                <input type="password" class="form-control" id="password2" placeholder="" required="">
                             </div>
 
                             <button type="submit" class="btn btn-primary submit mb-4">Registrar</button>
