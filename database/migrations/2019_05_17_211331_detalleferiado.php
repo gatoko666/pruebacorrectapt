@@ -14,7 +14,7 @@ class Detalleferiado extends Migration
     public function up()
     {
        
-        Schema::create('detalleferiado', function (Blueprint $table) {
+        Schema::table('detalleferiado', function (Blueprint $table) {
             $table->increments('IdDetalleFeriado');
             $table->date('FechaDiaFeriado');
             $table->text('DescripcionFeriado');

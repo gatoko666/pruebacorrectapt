@@ -39,14 +39,42 @@
                                 <label for="name">Nombre Operador :</label>
                                 <input type="text" class="form-control" name="NombreOperador" value="{{$operador->NombreOperador}}"/>
                             </div>
-                            <div class="form-group">
-                                <label for="price">Apellido Operador  :</label>
-                                <input type="text" class="form-control" name="ApellidoOperador" value="{{$operador->ApellidoOperador}}"/>
-                            </div>
+                          
                             <div class="form-group">
                                     <label for="price">Correo Operador  :</label>
                                     <input type="text" class="form-control" name="Correo" value="{{$operador->Correo}}"/>
                                 </div>
+
+                                <div class="form-group row">
+                                        <label for="inputdescripcion" class="col-sm-2 col-form-label">Estado</label>
+                                        <div class="col-sm-5">
+                                                <p align="justify"><select name="EstadoCuentaOperador" size="1">
+                                                        <?php
+                                                        $valorestado =$operador->EstadoCuentaOperador;                            
+                                                          if ( $valorestado == 1) {
+                                                             $value1='1';
+                                                             $valuen1='Activo';
+
+                                                          } ?>
+                                                          
+                                                          <option value="<?php  $value1; ?>"selected><?php echo " $valuen1"; ?></option>
+                                                          <?php
+                                                          else
+                                                          {
+                                                            $value2='2';
+                                                            $valuen2='Inactivo';
+                                                          }
+                                                          <option value="<?php  $value2; ?>" ><?php echo " $valuen2"; ?></option>
+                                                          ?>
+                                                          
+
+                                                         
+                                                                                                                                                    
+                                                        </select> </p>                                                                                
+                                        </div>
+                                      </div>            
+
+                                
                                 <div class="form-group">
                                         <label for="price">Localización Operador  :</label>
                                         <input type="text" class="form-control" name="LocacionOperador" value="{{$operador->LocacionOperador}}"/>

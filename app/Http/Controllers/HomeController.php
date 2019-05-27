@@ -21,8 +21,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    /*
     public function index()
     {
         return view('/index');
     }
+    */
+    
+                //funcion para saber quien logea
+                public function index(Request $request)
+                {
+                    $request->user()->authorizeRoles(['user', 'admin']);
+                    
+                    return view('/index');
+                }
+
+
 }

@@ -53,6 +53,8 @@ Route::resource('operadorexternos','OperadorExternoController')->middleware('aut
 
 Route::resource('tiposdeturnos','TiposDeTurnosController')->middleware('auth');
 
+
+
 Route::get('perfil', function () {
     return view('perfil/indexperfil');
 })->middleware('auth');
@@ -114,13 +116,22 @@ Route::get('solicitarvacaciones', function () {
     return view('solicitudes.solicitardialibre');
 })->middleware('auth');
 
-
+/*
 Route::get('generarturnos', function () {
     return view('turnos.generarturnos');
 })->middleware('auth');
 
-
+*/
 Route::get('revisarturnos', function () {
     return view('turnos.turnos');
 })->middleware('auth');
+
+
+Route::resource('generarturnos','TurnosController')->middleware('auth');
+
+
+
+
+
+
 

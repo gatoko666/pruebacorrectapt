@@ -10,9 +10,14 @@ class FeriadoController extends Controller
 {
     
     
+ 
 
-    public function index()
+
+
+
+    public function index(Request $request)
         {
+            $request->user()->authorizeRoles([ 'admin']);
             $detalleferiado = Feriado:: paginate(10);
             //dd($detalleferiado);             
                 return view('feriados/indexferiado', compact('detalleferiado'));

@@ -42,21 +42,13 @@
                             <thead>
                                     <tr>
                                         
-                                        <th class="text-center">
- 
-                                            <br>
-                                          
-                                        </th>
+                                    
                                         <th class="text-center">
  
                                                 <br>
                                               
                                             </th>
-                                        <th class="text-center">
- 
-                                                <br>
-                                              
-                                            </th>
+                                      
                                             <th class="text-center">
  
                                                     <br>
@@ -105,11 +97,7 @@
                                             <br>
                                            
                                         </th>
-                                        <th class="text-center">
-                                            Apellido 
-                                        <br>
-                                       
-                                    </th>
+                                      
                                         <th class="text-center">
                                                 Rut 
                                             <br>
@@ -132,11 +120,7 @@
                                                     <br>
                                                 
                                                 </th>
-                                                <th class="text-center">
-                                                        Fecha Baja
-                                                        <br>
-                                                    
-                                                    </th>
+                                              
                                                     <th class="text-center">
                                                         Localización
                                                         <br>
@@ -155,12 +139,23 @@
                             @foreach($detalleoperadorexterno as $opex)
                             <tr>
                                 <th class="text-nowrap" scope="row">{{$opex->NombreOperadorEx}}</th>
-                                <td>{{$opex->ApellidoOperadorEX}}</td>
+                           
                                 <td>{{$opex->RutOperadorExterno}}</td>
                                 <td>{{$opex->Correo}}</td>
-                                <td>{{$opex->EstadoCuentaOperadorEX}}</td>                                
-                                <td>{{$opex->FechaAltaOperador}}</td>
-                                <td>{{$opex->FechaBajaOperadorEX}}</td>                               
+                                <td>
+                                    <?php
+                                  $valorestado =$opex->EstadoCuentaOperadorEX;                            
+                                    if ( $valorestado == 1) {
+                                        echo "Activo";
+                                    }else
+                                    {
+                                      echo "Inactivo";
+                                    }
+                                    ?>
+                                   </td>                      
+                              
+                                <td>{{$opex->FechaAltaOperadorEX}}</td>
+                                                           
                                 <td>{{$opex->LocalizacionExterno}}</td>  
                                 <td>
                                          
@@ -355,12 +350,7 @@
                                                                                 <input type="text" name="NombreOperadorEx" class="form-control" id="inputnombre"  onfocus="this.value=''"  placeholder="Nombre">
                                                                               </div>
                                                                             </div>
-                                                                            <div class="form-group row">
-                                                                              <label for="inputapellido" class="col-sm-2 col-form-label">Apellido</label>
-                                                                              <div class="col-sm-5">
-                                                                                <input type="text" name="ApellidoOperadorEX" class="form-control" id="inputapellido"  onfocus="this.value=''"  placeholder="Apellido">
-                                                                              </div>
-                                                                            </div>
+                                                                         
 
                                                                             <div class="form-group row">
                                                                               <label for="inputrut" class="col-sm-2 col-form-label">Rut</label>

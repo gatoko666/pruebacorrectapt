@@ -40,18 +40,9 @@
                     <table class="table table-bordered table-striped">
 
                             <thead>
-                                    <tr>
+                                    <tr>                                       
                                         
-                                        <th class="text-center">
- 
-                                            <br>
-                                          
-                                        </th>
-                                        <th class="text-center">
- 
-                                                <br>
-                                              
-                                            </th>
+                                     
                                         <th class="text-center">
  
                                                 <br>
@@ -94,21 +85,13 @@
                                             </th>
                                        
                                     </tr>
-                                </thead>
-
-                        
+                                </thead>                        
                         <thead>
-                                <tr>
-                                                                    
+                                <tr>                                                                    
                                         <th class="text-center">
                                                 Nombre 
-                                            <br>
-                                           
-                                        </th>
-                                        <th class="text-center">
-                                            Apellido 
-                                        <br>                                       
-                                    </th>
+                                            <br>                                           
+                                        </th>                                        
                                         <th class="text-center">
                                                 Rut 
                                             <br>                                          
@@ -125,10 +108,7 @@
                                                     Fecha Alta
                                                     <br>                                                
                                                 </th>
-                                                <th class="text-center">
-                                                        Fecha Baja
-                                                        <br>                                                    
-                                                    </th>
+                                                
                                                     <th class="text-center">
                                                         Localización
                                                         <br>                                                    
@@ -142,20 +122,25 @@
                         <tbody>
                             @foreach($detalleoperador as $op)
                             <tr>
-                                <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>
-                                <td>{{$op->ApellidoOperador}}</td>
+                                <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>                                 
                                 <td>{{$op->RutOperador}}</td>
                                 <td>{{$op->Correo}}</td>
-                                <td>{{$op->EstadoCuentaOperador}}</td>                                
-                                <td>{{$op->FechaAltaOperador}}</td>
-                                <td>{{$op->FechaBajaOperador}}</td>                               
-                                <td>{{$op->LocacionOperador}}</td>  
                                 <td>
-                                  
+                                  <?php
+                                $valorestado =$op->EstadoCuentaOperador;                            
+                                  if ( $valorestado == 1) {
+                                      echo "Activo";
+                                  }else
+                                  {
+                                    echo "Inactivo";
+                                  }
+                                  ?>
+                                 </td>                                
+                                <td>{{$op->FechaAltaOperador}}</td>
+                                                        
+                                <td>{{$op->LocacionOperador}}</td>  
+                                <td>                                  
                                             <a href="{{ route('operadores.edit',$op)}}" class="btn btn-secondary">Editar</a> 
-
-                                            
-                                        
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
                                         Eliminar
                                       </button>   
@@ -204,11 +189,8 @@
                                                   {{ csrf_field() }}
                                                   @method('DELETE')
                                                   <button class="btn btn-danger" type="submit">Eliminar</button>
-                                                </form>
-
-                                      
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                      
+                                                </form>                                      
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>                                      
                                     </div>
                                     </div>
                                   </div>
@@ -223,9 +205,7 @@
                         <div class="modal fade bd-example-modal-xl" id="fee-details1" tabindex="-1" role="dialog" aria-labelledby="fee-details-label" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-xl">
                                 <div class="modal-content">
-                                    
-                                    <div class="modal-body">
-                                      
+                                    <div class="modal-body">                                      
                                             <section class="grids-section bd-content">
                                                     <!-- Grids Info -->
                                                     <div class="outer-w3-agile mt-3">
@@ -233,46 +213,35 @@
                                                             </h4>
                                                         <table class="table table-bordered table-striped">
                                                             <thead>
-                                                                <tr>
-                                                                    
+                                                                <tr>                                                                    
                                                                     <th class="text-center">
                                                                             Nombre 
-                                                                        <br>
-                                                                       
+                                                                        <br>                                                                       
                                                                     </th>
                                                                     <th class="text-center">
                                                                             Email 
-                                                                        <br>
-                                                                      
+                                                                        <br>                                                                      
                                                                     </th>
                                                                     <th class="text-center">
                                                                             Localización 
-                                                                        <br>
-                                                                       
-                                                                    </th>
-                                                                   
-                                                                   
+                                                                        <br>                                                                       
+                                                                    </th>      
                                                                     <th class="text-center">
                                                                             Teléfono
-                                                                            <br>
-                                                                        
+                                                                            <br>                                                                        
                                                                         </th>
                                                                         <th class="text-center">
                                                                                 Estado
-                                                                                <br>
-                                                                            
+                                                                                <br>                                                                            
                                                                             </th>
                                                                             <th class="text-center">
                                                                                     Fecha de Alta
-                                                                                    <br>
-                                                                                
+                                                                                    <br>                                                                                
                                                                                 </th>
                                                                         <th class="text-center">
                                                                                 Acción
-                                                                                <br>
-                                                                            
-                                                                            </th>
-                                                                   
+                                                                                <br>                                                                            
+                                                                            </th>                                                                  
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -341,12 +310,7 @@
                                                                                 <input type="text" name="NombreOperador" class="form-control" id="inputnombre"  onfocus="this.value=''"  placeholder="Nombre">
                                                                               </div>
                                                                             </div>
-                                                                            <div class="form-group row">
-                                                                              <label for="inputapellido" class="col-sm-2 col-form-label">Apellido</label>
-                                                                              <div class="col-sm-5">
-                                                                                <input type="text" name="ApellidoOperador" class="form-control" id="inputapellido"  onfocus="this.value=''"  placeholder="Apellido">
-                                                                              </div>
-                                                                            </div>
+                                                                          
 
                                                                             <div class="form-group row">
                                                                               <label for="inputrut" class="col-sm-2 col-form-label">Rut</label>

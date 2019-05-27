@@ -58,12 +58,7 @@
                                                   </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                        <label for="inputdescripcion" class="col-sm-2 col-form-label">Apellido</label>
-                                                        <div class="col-sm-5">
-                                                          <input type="text" class="form-control" id="inputdescripcion" placeholder="Apellido">
-                                                        </div>
-                                                      </div>
+                                               
                                                       <div class="form-group row">
                                                             <label for="inputdescripcion" class="col-sm-2 col-form-label">Correo</label>
                                                             <div class="col-sm-5">
