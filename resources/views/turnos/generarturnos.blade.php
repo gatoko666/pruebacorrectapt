@@ -100,86 +100,58 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <tr>                           
+
+
+                    <tbody>
+                            <tr>                           
                                     @foreach($detalleoperador as $op)                                   
                                         <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>                                                                                 
-                                    </tr>                                   
-                                    @endforeach                                    
-                                    <tr>
-                                            @foreach($detalleoperadorexterno as $opex)
-                                        <th class="text-nowrap" scope="row">{{$opex->NombreOperadorEx}}</th>                                                                                 
-                                    </tr>                                   
-                                    @endforeach                                       
-                                    <tr>
+                                    </tr>  
+                                    
+                                    <?php 
+                                    for ($x = 1; $x <= 7; $x++) {                                             
+                                        ?>                                            
                                         <td>
-                                            gagaggagaggagag
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                            @foreach($detalleoperador as $op)
-                                           
-                                                <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>                                                                                 
-                                     </tr>   
-                                     @endforeach 
-                                    </tr>
+                                                <p align="justify"><select name="nombre" size="1">
+                                                        @foreach($detalletiposdeturnos as $dtt)
+                                                        <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                        @endforeach     
+                                                        </select> 
+                                                </p>    
+                                           </td>
+                             <?php 
 
-                                    <tr>
-                                    <tr>
+                                    } 
+                             ?>         
+                                    @endforeach 
 
-                                        <td>
-                                            sdfsdf
-                                        </td>
-                                    </tr>
-                                </tr>
+                    </tbody>
 
-                            
-                            
-                           
-                                               
+                        <tbody>
+                           <tr>
+                               <td>
+                                   fdgfdg
+                               </td>
+                               <?php 
+                                        for ($x = 1; $x <= 7; $x++) {                                             
+                                            ?>                                            
+                                            <td>
+                                                    <p align="justify"><select name="nombre" size="1">
+                                                            @foreach($detalletiposdeturnos as $dtt)
+                                                            <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                            @endforeach     
+                                                            </select> 
+                                                    </p>    
+                                               </td>
+                                 <?php 
 
-                          
-                        </tbody>
-
-
-                    
+                                        } 
+                                 ?>                             
+                               
+                           </tr>
+                             </tr>
+                        </tbody>                    
                     </table>
-
-                    <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                    @foreach($detalleoperador as $op)
-                                <th scope="row">1</th>
-                                                               
-                                <td>{{$op->NombreOperador}}</td>
-                                       
-                              </tr>
-                              @endforeach  
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                            </tbody>
-                          </table>
-
-
                     <button type="button" class="btn btn-primary">Publicar turnos</button>
                     <button type="button" class="btn btn-primary">Guardar Borrador turnos</button>
 
