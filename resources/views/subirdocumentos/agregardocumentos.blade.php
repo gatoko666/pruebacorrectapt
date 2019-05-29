@@ -53,16 +53,16 @@
 
                             <!--// upload file -->
 
-                            <form action="/proyectotitulo/public/uploadfile" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('documentos.store') }}" method="post"   files="true"  enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <input type="file" class="form-control-file" accept="application/pdf"  name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp">
+                                    <input type="file" class="form-control-file" accept="application/pdf"  name="file" id="exampleInputFile" aria-describedby="fileHelp">
                                     <br>
                                   <label for="exampleFormControlTextarea1">Descripción</label>
-                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>      
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" name="Descripcion" rows="3"></textarea>      
                                   <br>
                                     <br>
-                                  <small id="fileHelp" class="form-text text-muted">Por favor, solo suba arhcivos de 2MB o menos.</small>
+                                  <small id="fileHelp" class="form-text text-muted">Por favor, solo suba archivos de 2MB o menos.</small>
                                     <br>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Subir</button>

@@ -318,13 +318,13 @@
                                                                                 <input type="text" name="RutOperador" class="form-control" id="inputrut"  onfocus="this.value=''"  placeholder="Rut">
                                                                               </div>
                                                                             </div>
-
                                                                             <div class="form-group row">
-                                                                              <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
-                                                                              <div class="col-sm-5">
-                                                                                <input type="password" name="Password" class="form-control" id="inputpassword"  onfocus="this.value=''"  placeholder="Password">
+                                                                                <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
+                                                                                <div class="col-sm-5">
+                                                                                  <input type="password" name="Password" class="form-control" id="inputpassword"  onfocus="this.value=''"  placeholder="Password">
+                                                                                </div>
                                                                               </div>
-                                                                            </div>
+                                                                         
 
                                                                             <div class="form-group row">
                                                                               <label for="inputemail" class="col-sm-2 col-form-label">Email</label>

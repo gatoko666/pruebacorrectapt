@@ -13,8 +13,8 @@ class OperadorExternoController extends Controller
         {
             $request->user()->authorizeRoles([ 'admin']);
             $operador=Auth::id();
-            $detalleoperadorexterno = OperadorExterno:: paginate(10);                                
-
+            $detalleoperadorexterno = OperadorExterno::where('IdAdministrador', $operador)-> paginate(10);
+            
             return view('operadoresexternos/indexoperadorexterno', compact('detalleoperadorexterno'));
    
     }

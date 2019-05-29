@@ -20,9 +20,25 @@
                 <!-- Grids Info -->
                 <div class="outer-w3-agile mt-3">
                     <h4 class="tittle-w3-agileits mb-4">Turnos</h4>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br />
+                    @endif
+                      <br>
+                      @if ($message = Session::get('success'))
+                      <div class="alert alert-success">
+                          <p>{{ $message }}</p>
+                      </div>
+                  @endif     
                     <div class="container">
                            
-
+                            <form action="{{ route('generarturnos.store') }}" method="POST">
+                                    @csrf
                                         
     
                             </div>
@@ -48,6 +64,7 @@
                                       
                                       <div class="col-sm">
                                             <p align="justify"><select name="Semana" size="1">
+                                                       
                                                     <option value="valor 1"selected>1</option>
                                                     <option value="valor 2" >2</option>
                                                     <option value="valor 3">3  </option>
@@ -63,104 +80,108 @@
                         <thead>
                             <tr>
                                 <th>Trabajadores</th>
-                                <th class="text-center">
+                                <th  name="DiaDeLaSemanaAsignado" class="text-center">
                                     Lunes
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                     
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
                                     Martes
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                     
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
                                     Miercoles
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                    
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
                                     Jueves
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                      
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
                                     Viernes
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                      
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
                                     Sábado
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                    
                                 </th>
-                                <th class="text-center">
+                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                    
                                     Domingo
+                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
                                     <br>
                                    
                                 </th>
                             </tr>
                         </thead>
+                        <tbody>
+                                                          
+                                        @foreach($detalleoperador as $op) 
+                                        <tr>       <input   name="NombreTrabajador" type="hidden"  >  
+                                            <th class="text-nowrap" name="NombreTrabajador" id="NombreTrabajador" scope="row">{{$op->NombreOperador}}</th>                                                                                      
+                                            
+                                            <?php                                    
+                                            for ($x = 1; $x <= 7; $x++) {                                             
+                                                ?>                                                                                      
+                                                <td>
+                                                        <p align="justify"><select name="nombre" size="1">
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                @endforeach     
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+                                                    
+                                     <?php 
+        
+                                            } 
+                                     ?>         
 
-
-                    <tbody>
-                            <tr>                           
-                                    @foreach($detalleoperador as $op)                                   
-                                        <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>                                                                                 
-                                    </tr>  
-                                    
-                                    <?php 
+                                        </tr> 
+                                        @endforeach                            
+                        </tbody>
+                        <tbody>
+                                @foreach($detalleoperadorexterno as $opex) 
+                                <tr>        <input   name="NombreTrabajador" type="hidden"  > 
+                                    <th class="text-nowrap"   name="NombreTrabajador"  scope="row">{{$opex->NombreOperadorEx}}</th>    
+                                    <?php                                    
                                     for ($x = 1; $x <= 7; $x++) {                                             
-                                        ?>                                            
+                                        
+                                        ?>                                                                              
                                         <td>
                                                 <p align="justify"><select name="nombre" size="1">
                                                         @foreach($detalletiposdeturnos as $dtt)
                                                         <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
                                                         @endforeach     
                                                         </select> 
-                                                </p>    
-                                           </td>
+                                                </p>                                                
+                                           </td>                                            
                              <?php 
 
                                     } 
                              ?>         
-                                    @endforeach 
 
-                    </tbody>
-
-                        <tbody>
-                           <tr>
-                               <td>
-                                   fdgfdg
-                               </td>
-                               <?php 
-                                        for ($x = 1; $x <= 7; $x++) {                                             
-                                            ?>                                            
-                                            <td>
-                                                    <p align="justify"><select name="nombre" size="1">
-                                                            @foreach($detalletiposdeturnos as $dtt)
-                                                            <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
-                                                            @endforeach     
-                                                            </select> 
-                                                    </p>    
-                                               </td>
-                                 <?php 
-
-                                        } 
-                                 ?>                             
-                               
-                           </tr>
-                             </tr>
-                        </tbody>                    
+                                </tr> 
+                                                           
+                                @endforeach 
+                        </tbody>                        
                     </table>
-                    <button type="button" class="btn btn-primary">Publicar turnos</button>
-                    <button type="button" class="btn btn-primary">Guardar Borrador turnos</button>
-
+                    <button type="submit"class="btn btn-primary">Publicar turnos</button>                   
+                </form>
                 </div>
-
-         </section>      
-
-
-   
+                <button type="submit" class="btn btn-primary">Guardar Borrador turnos</button>          
+         </section>         
                 <!--// Countdown -->
                 <!-- Copyright -->
 

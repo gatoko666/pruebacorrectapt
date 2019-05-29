@@ -58,12 +58,12 @@ class OperadorController extends Controller
 
                                 $operador= new Operador;
                                 $operador->NombreOperador=$request->NombreOperador;                                
-                                $operador->Password=$request->Password;
+                                
                                 $operador->Correo=$request->Correo;
                                 $operador->TelefonoOperador=$request->TelefonoOperador;
                                 $operador->EstadoCuentaOperador=$request->EstadoCuentaOperador;
                                 $operador->FechaAltaOperador=now();
-                                $operador->FechaBajaOperador=$request->FechaBajaOperador;
+                                $operador->Password=$request->Password;
                                 $operador->IdAdministrador=Auth::id();
                                 $operador->RutOperador=$request->RutOperador;
                                 $operador->LocacionOperador=$request->LocacionOperador;

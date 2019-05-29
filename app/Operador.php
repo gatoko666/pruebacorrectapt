@@ -15,7 +15,7 @@ class Operador extends Model
          'Password ', 'Correo'
         , 'TelefonoOperador', 'ImagenPerfilOperador'
         , 'EstadoCuentaOperador', 'FechaAltaOperador'
-        , 'FechaBajaOperador', 'IdAdministrador'
+        , 'IdAdministrador'
         , 'RutOperador', 'LocacionOperador'        
 
     ];

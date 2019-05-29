@@ -53,9 +53,7 @@
                     <li>
                         <a href="tiposdeturnos">Tipos de turno</a>
                     </li>
-                    <li>
-                        <a href="feriados">Gestión Feriados</a>
-                    </li>
+                     
                 </ul>
             </li>
 
@@ -98,9 +96,11 @@
                         <li>
                             <a href="absentismos">Absentismos</a>
                         </li>
+                        <!--
                         <li>
                             <a href="turnospendientes">Turnos pendientes</a>
                         </li>
+                    -->
                         <li>
                             <a href="vacaciones">Vacaciones</a>
                         </li>
@@ -118,10 +118,10 @@
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu5">
                                     <li>
-                                        <a href="subirdocumentos">Subir archivo</a>
+                                        <a href="agregardocumentos">Subir archivo</a>
                                     </li>
                                     <li>
-                                        <a href="listadodocumentos">Revisar archivos</a>
+                                        <a href="documentos">Revisar archivos</a>
                                     </li>
                                     
                                 </ul>

@@ -65,17 +65,7 @@ Route::get('notificaciones', function () {
 })->middleware('auth');
  
 
-Route::get('subirdocumentos', function () {
-    return view('subirdocumentos/indexsubirdocumentos');
-})->middleware('auth');
- 
 
-Route::get('listadodocumentos', function () {
-    return view('subirdocumentos/listadodocumentos');
-})->middleware('auth');
-
-
- 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -111,11 +101,11 @@ Route::get('solicitardialibre', function () {
     return view('solicitudes.solicitardialibre');
 })->middleware('auth');
 
-
+/*
 Route::get('solicitarvacaciones', function () {
-    return view('solicitudes.solicitardialibre');
+    return view('solicitudes.solicitarvacaciones');
 })->middleware('auth');
-
+*/
 /*
 Route::get('generarturnos', function () {
     return view('turnos.generarturnos');
@@ -128,10 +118,53 @@ Route::get('revisarturnos', function () {
 
 
 Route::resource('generarturnos','TurnosController')->middleware('auth');
+Route::resource('store/{OperadorConTurno,TurnoDiaAsignado,Operador_Turno}','TurnosController@store')->middleware('auth');
+
+
+
+
+/*
+Route::group(['prefix' => 'generarturnos', 'middleware' => 'auth'], function () {
+     
+    Route::post('/store/{OperadorConTurno,TurnoDiaAsignado,Operador_Turno}', 'TurnosController@store');
+    Route::get('/index', 'TurnosController@index');    
+  
+});
+*/
 
 
 
 
 
+Route::resource('solicitarvacaciones','SolicitudesController')->middleware('auth');
+
+
+
+ /*
+Route::get('agregardocumentos', function () {
+    return view('subirdocumentos/indexsubirdocumentos');
+})->middleware('auth');
+ 
+
+Route::get('listadodocumentos', function () {
+    return view('subirdocumentos/listadodocumentos');
+})->middleware('auth');
+
+*/
+ 
+//Route::resource('documentos','DocumentosController')->middleware('auth');
+//Route::resource('documentos','DocumentosController')->middleware('auth');
+
+//Route::resource('subirdocumentos','DocumentosUploadController')->middleware('auth');
+
+Route::resource('documentos','DocumentoController')->middleware('auth');
+
+
+
+
+Route::get('multipleimage', function () {
+    return view('multipleimage');
+});
+Route::post('multiplefileupload', 'imageController@multiplefileupload');
 
 

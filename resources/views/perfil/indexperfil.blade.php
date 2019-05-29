@@ -25,11 +25,7 @@
                         <thead>
                             <tr>
                                 
-                                <th class="text-center">
-                                    Editar Imágen
-                                    <br>
-                                   
-                                </th>
+                               
                                 <th class="text-center">
                                     Información Personal
                                     <br>                                  
@@ -38,16 +34,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th class="text-nowrap" scope="row">
-                                        <!--// upload file -->
-                                        <form>
-                                            <div class="form-group">
-                                              <label for="exampleFormControlFile1">Subir documento</label>
-                                              <input type="file" class="form-control-file" id="exampleFormControlFile1">      
-                                              <br>            
-                                            </div>
-                                          </form>
-                                </th>
+                                
                                 <td>
                                         <form>
                                           
