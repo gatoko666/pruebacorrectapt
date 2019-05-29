@@ -63,7 +63,7 @@ class TurnosController extends Controller
                             $DiaDeLaSemanaAsignado->DiaDeLaSemanaAsignado=$request->DiaDeLaSemanaAsignado;
                             $MesDeLaSemanaAsignado="Junio";
                             $AnoDeLaSemanaAsignado="2019";  
-                            dd($TurnoDiaAsignado);                           
+                            //dd($TurnoDiaAsignado);                           
                             $TurnoDiaAsignado->save();
 
 
@@ -74,7 +74,7 @@ class TurnosController extends Controller
 
                             $IdOperadorConTurno=$IdOperadorConTurno->TurnoDiaAsignado;
                             $IdTurnoDiaAsignado=$IdTurnoDiaAsignado->OperadorConTurno;  
-                            dd($Operador_Turno); 
+                           // dd($Operador_Turno); 
                              $Operador_Turno->save();
 
 
