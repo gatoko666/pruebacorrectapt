@@ -45,31 +45,43 @@ class TurnosController extends Controller
 
                         public function store(Request $request){        
                         
-                          $data=$request->all();
+                         // $data=$request->all();
+
+
+
                           
 
-                     // dd($request->all());
+                    //  dd($request->all());
                         
                     // dd( (count($request->NombreTrabajadori) ));
                         if(count($request->NombreTrabajadori) > 0)
                         {
                         foreach($request->NombreTrabajadori as $trabajador=>$t){
+                         // dd($trabajador);
                             $data2=array(
                                  
                                 'NombreTrabajador'=>$request->NombreTrabajadori[$trabajador],
-                                'NumeroSemana'=>$request->NumeroSemana[$trabajador],
-                                'MesDeLaSemanaAsignado'=>$request->MesDeLaSemanaAsignado[$trabajador],
-                                'AnoDeLaSemanaAsignado'=>$request->AnoDeLaSemanaAsignado[$trabajador],
-                                'DiaSemana'=>$request->DiaSemana[$trabajador],
+                            
+                                'NombreTurno'=>$request->nombreturnol[$trabajador],
+                                'NombreTurno'=>$request->nombreturnom[$trabajador],
+                                'NombreTurno'=>$request->nombreturnomm[$trabajador],
+                                'NombreTurno'=>$request->nombreturnoj[$trabajador],
+                                'NombreTurno'=>$request->nombreturnov[$trabajador],
+                                'NombreTurno'=>$request->nombreturnos[$trabajador],
+                                'NombreTurno'=>$request->nombreturnod[$trabajador],
                                                               
                             );                             
-                       //dd($data2);
+                  dd($data2);
                         TurnoAsignado::insert($data2);                             
 
                       }
                         }                  
 
                         return redirect()->back()->with('success','data insert successfully');
+
+
+
+
                         
                         
                          

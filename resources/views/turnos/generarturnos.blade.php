@@ -167,11 +167,9 @@
                                         <tr>       <input   name="NombreTrabajadori[]"  value="{{$op->NombreOperador}}"  type="hidden"  >  
                                             <th class="text-nowrap" name="NombreTrabajador"   scope="row">{{$op->NombreOperador}}</th>                                                                                      
                                             
-                                            <?php                                    
-                                            for ($x = 0; $x <= 6; $x++) {                                             
-                                                ?>                                                                                      
+                                                                                                                        
                                                 <td>
-                                                        <p align="justify"><select name="nombreturno[]" >
+                                                        <p align="justify"><select name="nombreturnol[]" >
                                                                 @foreach($detalletiposdeturnos as $dtt)
                                                                                                             
                                                                       
@@ -183,14 +181,110 @@
                                                                 </select> 
                                                         </p>                                                        
                                                    </td>
-                                                    
-                                     <?php 
-        
-                                            } 
-                                     ?>         
 
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnom[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnomm[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnoj[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnov[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnos[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                   <td>
+                                                        <p align="justify"><select name="nombreturnod[]" >
+                                                                @foreach($detalletiposdeturnos as $dtt)
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
+                                                                </select> 
+                                                        </p>                                                        
+                                                   </td>
+
+
+                                                    
+                                     
                                         </tr> 
-                                        @endforeach                            
+                                        @endforeach      
+                                        
+                                        
+
+
+
+
+
+
                         </tbody>
                       
                     </table>
