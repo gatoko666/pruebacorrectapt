@@ -24,9 +24,7 @@
                     <a href="operadores">Administrar trabajadores</a>
                 </li>                   
                 
-                <li>
-                    <a href="operadorexternos">Administrar trabajadores Externos</a>
-                </li>
+               
             </ul>
         </li>
 

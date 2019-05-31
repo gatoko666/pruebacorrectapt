@@ -63,14 +63,44 @@
                                       </div>
                                       
                                       <div class="col-sm">
-                                            <p align="justify"><select name="Semana" size="1">
+                                            <p align="justify"><select name="NumeroSemana[]" >
                                                        
-                                                    <option value="valor 1"selected>1</option>
-                                                    <option value="valor 2" >2</option>
-                                                    <option value="valor 3">3  </option>
-                                                    <option value="valor 4">4</option>
+                                                    <option value="Semana1"selected>1</option>
+                                                    <option value="Semana2" >2</option>
+                                                    <option value="Semana3">3  </option>
+                                                    <option value="Semana4">4</option>
                                                     </select> </p>
                                       </div>
+                                      <div class="col-sm">
+                                            Semana
+                                          </div>
+                                          
+                                          <div class="col-sm">
+                                                <p align="justify"><select name="MesDeLaSemanaAsignado[]" >
+                                                           
+                                                        <option value="Enero"selected>Enero</option>
+                                                        <option value="Febrero" >Febrero</option>
+                                                        <option value="Marzo">Marzo</option>
+                                                        <option value="Abril">Abril</option>
+                                                        <option value="Mayo">Mayo</option>
+                                                        <option value="Junio">Junio</option>
+                                                        <option value="Julio">Julio</option>
+                                                        <option value="Agosto">Agosto</option>
+                                                        <option value="Septiembre">Septiembre</option>
+                                                        <option value="Octubre">Octubre</option>
+                                                        <option value="Noviembre">Noviembre</option>
+                                                        <option value="Diciembre">Diciembre</option>
+                                                        </select> </p>
+                                          </div>
+                                          <div class="col-sm">
+                                                Semana
+                                              </div>
+                                              
+                                              <div class="col-sm">
+                                                    <p align="justify"><select name="AnoDeLaSemanaAsignado[]" >                                                               
+                                                            <option value="2019"selected>2019</option>                                                           
+                                                            </select> </p>
+                                              </div>
                                     </div>
                                   </div>
 
@@ -80,46 +110,52 @@
                         <thead>
                             <tr>
                                 <th>Trabajadores</th>
-                                <th  name="DiaDeLaSemanaAsignado" class="text-center">
+                                <input   name="DiaSemana[]"  value="lunes"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="lunes" class="text-center">
                                     Lunes
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                     
-                                </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                </th><input   name="DiaSemana[]"  value="martes"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="martes" class="text-center">
                                     Martes
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                
                                     <br>
                                     
-                                </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                </th><input   name="DiaSemana[]"  value="miercoles"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="miercoles" class="text-center">
                                     Miercoles
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                    
                                 </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                <input   name="DiaSemana[]"  value="jueves"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="jueves" class="text-center">
                                     Jueves
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                      
                                 </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                <input   name="DiaSemana[]"  value="viernes"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="viernes" class="text-center">
                                     Viernes
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                      
                                 </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                <input   name="DiaSemana[]"  value="sabado"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]"  value="sabado" class="text-center">
                                     Sábado
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                    
                                 </th>
-                                <th name="DiaDeLaSemanaAsignado" class="text-center">
+                                <input   name="DiaSemana[]"  value="domingo"  type="hidden"  >
+                                <th name="DiaDeLaSemanaAsignado[]" value="domingo"  class="text-center">
+                                    
                                     
                                     Domingo
-                                    <input   name="DiaDeLaSemanaAsignado" type="hidden"  >  
+                                    
                                     <br>
                                    
                                 </th>
@@ -128,17 +164,22 @@
                         <tbody>
                                                           
                                         @foreach($detalleoperador as $op) 
-                                        <tr>       <input   name="NombreTrabajador" type="hidden"  >  
-                                            <th class="text-nowrap" name="NombreTrabajador" id="NombreTrabajador" scope="row">{{$op->NombreOperador}}</th>                                                                                      
+                                        <tr>       <input   name="NombreTrabajadori[]"  value="{{$op->NombreOperador}}"  type="hidden"  >  
+                                            <th class="text-nowrap" name="NombreTrabajador"   scope="row">{{$op->NombreOperador}}</th>                                                                                      
                                             
                                             <?php                                    
-                                            for ($x = 1; $x <= 7; $x++) {                                             
+                                            for ($x = 0; $x <= 6; $x++) {                                             
                                                 ?>                                                                                      
                                                 <td>
-                                                        <p align="justify"><select name="nombre" size="1">
+                                                        <p align="justify"><select name="nombreturno[]" >
                                                                 @foreach($detalletiposdeturnos as $dtt)
-                                                                <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
-                                                                @endforeach     
+                                                                                                            
+                                                                      
+
+                                                                <option value="{{$dtt->AbreviacionTurno}}"selected>{{$dtt->AbreviacionTurno}}</option> 
+                                                                
+                                                                @endforeach    
+                                                            
                                                                 </select> 
                                                         </p>                                                        
                                                    </td>
@@ -151,31 +192,7 @@
                                         </tr> 
                                         @endforeach                            
                         </tbody>
-                        <tbody>
-                                @foreach($detalleoperadorexterno as $opex) 
-                                <tr>        <input   name="NombreTrabajador" type="hidden"  > 
-                                    <th class="text-nowrap"   name="NombreTrabajador"  scope="row">{{$opex->NombreOperadorEx}}</th>    
-                                    <?php                                    
-                                    for ($x = 1; $x <= 7; $x++) {                                             
-                                        
-                                        ?>                                                                              
-                                        <td>
-                                                <p align="justify"><select name="nombre" size="1">
-                                                        @foreach($detalletiposdeturnos as $dtt)
-                                                        <option value="v1"selected>{{$dtt->AbreviacionTurno}}</option> 
-                                                        @endforeach     
-                                                        </select> 
-                                                </p>                                                
-                                           </td>                                            
-                             <?php 
-
-                                    } 
-                             ?>         
-
-                                </tr> 
-                                                           
-                                @endforeach 
-                        </tbody>                        
+                      
                     </table>
                     <button type="submit"class="btn btn-primary">Publicar turnos</button>                   
                 </form>

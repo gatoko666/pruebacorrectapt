@@ -11,6 +11,9 @@ use App\TiposDeTurnos;
 use App\TurnoDiaAsignado;
 use App\OperadorConTurno;
 use App\Operador_Turno;
+use App\TurnoAsignado;
+use Illuminate\Support\Arr;
+
 
 class TurnosController extends Controller
 {/*    public function index(Request $request)
@@ -40,53 +43,107 @@ class TurnosController extends Controller
 
 
 
-                        public function store(Request $request){
+                        public function store(Request $request){        
+                        
+                          $data=$request->all();
+                          
+
+                     // dd($request->all());
+                        
+                    // dd( (count($request->NombreTrabajadori) ));
+                        if(count($request->NombreTrabajadori) > 0)
+                        {
+                        foreach($request->NombreTrabajadori as $trabajador=>$t){
+                            $data2=array(
+                                 
+                                'NombreTrabajador'=>$request->NombreTrabajadori[$trabajador],
+                                'NumeroSemana'=>$request->NumeroSemana[$trabajador],
+                                'MesDeLaSemanaAsignado'=>$request->MesDeLaSemanaAsignado[$trabajador],
+                                'AnoDeLaSemanaAsignado'=>$request->AnoDeLaSemanaAsignado[$trabajador],
+                                'DiaSemana'=>$request->DiaSemana[$trabajador],
+                                                              
+                            );                             
+                       //dd($data2);
+                        TurnoAsignado::insert($data2);                             
+
+                      }
+                        }                  
+
+                        return redirect()->back()->with('success','data insert successfully');
+                        
+                        
+                         
+
+                         
+                           for ($i = 1; $i <= 7; $i++) {
+                                      for ($i = 1; $i <= 7; $i++) {
+
+
+                                          
+
+                                      
+                                      
+                                      }                           
+
+                              }
 
 
 
-                           // $validated = $request->validated();
-                           
-                           
-                            //dd($TurnoDiaAsignado);
-                            //dd($TurnoDiaAsignado);
-                            $OperadorConTurno= new OperadorConTurno;
-                          // dd($request->NombreTrabajador);
-                            $NombreTrabajador=$request->NombreTrabajador;
 
-                            $IdAdministrador->IdAdministrador=Auth::id();
-                            //dd($request->NombreTrabajador);
+
+
+
+                           // $OperadorConTurno= new OperadorConTurno;                          
+                         //   $OperadorConTurno=$request->NombreTrabajador;   
+                        //    $OperadorConTurno->IdAdministrador=Auth::id();   
+ 
+
+                           /*
+                        $operador=Auth::id(); 
+                        dd($request->NombreTrabajadori);
+
+
+                        $detalleoperador = Operador::where('IdAdministrador', $operador)-> paginate(100);
+
+                        $OperadorConTurno= new OperadorConTurno;
+                            foreach ($detalleoperador as $op ) {
+                             
+                                                        
+                            $OperadorConTurno=$request->NombreTrabajador;   
+                            $OperadorConTurno->IdAdministrador=Auth::id();     
+                              
                             $OperadorConTurno->save();
 
-
-                           // dd($request->DiaDeLaSemanaAsignado);
-                            $TurnoDiaAsignado= new TurnoDiaAsignado;
-                            $DiaDeLaSemanaAsignado->DiaDeLaSemanaAsignado=$request->DiaDeLaSemanaAsignado;
-                            $MesDeLaSemanaAsignado="Junio";
-                            $AnoDeLaSemanaAsignado="2019";  
-                            //dd($TurnoDiaAsignado);                           
-                            $TurnoDiaAsignado->save();
+                            }
+*/
+                            
 
 
-                            $Operador_Turno= new Operador_Turno;                              
-                            $TurnoDiaAsignado = TurnoDiaAsignado::findOrFail($IdTurnoDiaAsignado);
-                            $OperadorConTurno = OperadorConTurno::findOrFail($IdOperadorConTurno);  
 
 
-                            $IdOperadorConTurno=$IdOperadorConTurno->TurnoDiaAsignado;
-                            $IdTurnoDiaAsignado=$IdTurnoDiaAsignado->OperadorConTurno;  
-                           // dd($Operador_Turno); 
-                             $Operador_Turno->save();
+                                                 
+                          //  dd($OperadorConTurno);
+                       //  $OperadorConTurno->save();
+ 
+/*
+                           $dataSet = [];
+                           foreach ($OperadorConTurno as $OpCT) {
+                               $dataSet[] = [
+                                   'NombreTrabajador'  => $NombreTrabajador=$request->NombreTrabajador,
+                                   'IdAdministrador'    => $IdAdministrador->IdAdministrador=Auth::id(),
+                                 
+                               ];
+                           }
+                           
+                           DB::table('operadorconturno')->insert($dataSet);
+
+*/
 
 
-                            // $detalleoperador = Operador::create($validatedData);                                 
+
+
+                                                      
                            return redirect('generarturnos')->with('success','Turno  Agregado correctamente');
-
-
-
-
-
-
-
 
                         }
 
