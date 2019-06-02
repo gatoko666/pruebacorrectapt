@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Freshwork\ChileanBundle\Laravel\ChileanBundleServiceProvider::class,
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -174,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
 
     ],
 
@@ -226,6 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Rut'   => Freshwork\ChileanBundle\Laravel\Facades\Rut::class,
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+
 
     ],
 

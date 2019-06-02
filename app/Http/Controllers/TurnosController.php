@@ -13,6 +13,13 @@ use App\OperadorConTurno;
 use App\Operador_Turno;
 use App\TurnoAsignado;
 use Illuminate\Support\Arr;
+use App\Event;
+use Calendar;
+use Illuminate\Support\Facades\View;
+
+
+
+
 
 
 class TurnosController extends Controller
@@ -34,9 +41,33 @@ class TurnosController extends Controller
                                             $detalletiposdeturnos = TiposDeTurnos::where('IdAdministrador', $operador)-> paginate(100); 
                                             $detalleoperadorexterno = OperadorExterno::where('IdAdministrador', $operadorexterno)-> paginate(100);   
 
+                                            $events = [];
+                                            $data = Event::all();
+                                            if($data->count())
+                                             {
+                                                foreach ($data as $key => $value) 
+                                                {
+                                                    $events[] = Calendar::event(
+                                                        $value->title,
+                                                        true,
+                                                        new \DateTime($value->start_date),
+                                                        new \DateTime($value->end_date.'+1 day'),
+                                                        null,
+                                                        // Add color
+                                                     [
+                                                         
+                                                     ]
+                                                    );
+                                                }
+                                            }
+                                            $calendar = Calendar::addEvents($events);
+                                               // dd($calendar);
 
+                                            View::share('calendar');
+
+                                           
                                           
-                                             return view('turnos.generarturnos', compact('detalleoperador','detalletiposdeturnos','detalleoperadorexterno'));
+                                             return view('turnos.generarturnos', compact('detalleoperador','detalletiposdeturnos','detalleoperadorexterno','calendar'));
 
                                                     
                                         }
@@ -47,32 +78,75 @@ class TurnosController extends Controller
                         
                          // $data=$request->all();
 
-
-
+                         $IdAdministrador=Auth::id();
+                         
                           
+                        // $IdAdministrador->IdAdministrador=Auth::id();
 
                     //  dd($request->all());
-                        
-                    // dd( (count($request->NombreTrabajadori) ));
+                   // $data=$request->all();
+                  //  $lastid=TurnoAsignado::create($data)->id;
+
+
+ /*
+                  $idobject=TurnoAsignado::findOrFail('NombreTrabajador',
+                  'NumeroSemana','MesDeLaSemanaAsignado',
+                  'AnoDeLaSemanaAsignado'
+                  ,$request->NombreTrabajadori, $request->NumeroSemana,$request->MesDeLaSemanaAsignado,$request->AnoDeLaSemanaAsignado)->first();
+*/
+                         
+                     // dd( $idobject);
+
+
+                   
+
+
                         if(count($request->NombreTrabajadori) > 0)
                         {
                         foreach($request->NombreTrabajadori as $trabajador=>$t){
                          // dd($trabajador);
+
+
                             $data2=array(
-                                 
+
+                             // 'id'=>$lastid,
                                 'NombreTrabajador'=>$request->NombreTrabajadori[$trabajador],
-                            
-                                'NombreTurno'=>$request->nombreturnol[$trabajador],
-                                'NombreTurno'=>$request->nombreturnom[$trabajador],
-                                'NombreTurno'=>$request->nombreturnomm[$trabajador],
-                                'NombreTurno'=>$request->nombreturnoj[$trabajador],
-                                'NombreTurno'=>$request->nombreturnov[$trabajador],
-                                'NombreTurno'=>$request->nombreturnos[$trabajador],
-                                'NombreTurno'=>$request->nombreturnod[$trabajador],
+                                'NumeroSemana'=>$request->NumeroSemana,
+                                'MesDeLaSemanaAsignado'=>$request->MesDeLaSemanaAsignado,
+                                'AnoDeLaSemanaAsignado'=>$request->AnoDeLaSemanaAsignado,                                
+                                'nombreturnol'=>$request->nombreturnol[$trabajador],
+                                'nombreturnom'=>$request->nombreturnom[$trabajador],
+                                'nombreturnomm'=>$request->nombreturnomm[$trabajador],
+                                'nombreturnoj'=>$request->nombreturnoj[$trabajador],
+                                'nombreturnov'=>$request->nombreturnov[$trabajador],
+                                'nombreturnos'=>$request->nombreturnos[$trabajador],
+                                'nombreturnod'=>$request->nombreturnod[$trabajador],
+                                'IdAdministrador'=>$IdAdministrador ,
+
+                                 
                                                               
-                            );                             
-                  dd($data2);
-                        TurnoAsignado::insert($data2);                             
+                            );  
+                            
+                            
+                            
+                            TurnoAsignado::insert($data2); 
+
+                   // dd($data2);
+                  
+                    /*
+                   if (count($idobject) > 0 ) {
+                    TurnoAsignado::update($data2); 
+                    return redirect()->back()->with('success','data insert successfully');
+
+                   }else {
+                   
+                    TurnoAsignado::insert($data2); 
+                    return redirect()->back()->with('success','data insert successfully');
+                   } 
+
+                   */
+                          
+                        //TurnoAsignado::firstOrCreate($data2);                            
 
                       }
                         }                  
@@ -86,20 +160,7 @@ class TurnosController extends Controller
                         
                          
 
-                         
-                           for ($i = 1; $i <= 7; $i++) {
-                                      for ($i = 1; $i <= 7; $i++) {
-
-
-                                          
-
-                                      
-                                      
-                                      }                           
-
-                              }
-
-
+                       
 
 
 
@@ -155,14 +216,34 @@ class TurnosController extends Controller
 
 
                                                       
-                           return redirect('generarturnos')->with('success','Turno  Agregado correctamente');
+                        //   return redirect('generarturnos')->with('success','Turno  Agregado correctamente');
 
                         }
 
 
 
 
+                        public function turnospresentes(Request $request)
+                              {
 
+                                  $request->user()->authorizeRoles([ 'admin']);
+
+                                  $operador=Auth::id();
+
+                                  $turnospresentes = TurnoAsignado::where('IdAdministrador', $operador)-> paginate(10);   
+                                          
+                                                        
+                                  return view('turnos.turnos', compact('turnospresentes'));
+
+                                  
+                        
+                          }
+
+
+
+
+
+                          
 
 
 

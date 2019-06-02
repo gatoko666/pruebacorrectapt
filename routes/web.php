@@ -112,12 +112,11 @@ Route::get('generarturnos', function () {
 })->middleware('auth');
 
 */
-Route::get('revisarturnos', function () {
-    return view('turnos.turnos');
-})->middleware('auth');
+
 
 
 Route::resource('generarturnos','TurnosController')->middleware('auth');
+//Route::get('generarturnos','TurnosController@index')->middleware('auth');
 Route::resource('store/{OperadorConTurno,TurnoDiaAsignado,Operador_Turno}','TurnosController@store')->middleware('auth');
 
 
@@ -166,5 +165,15 @@ Route::get('multipleimage', function () {
     return view('multipleimage');
 });
 Route::post('multiplefileupload', 'imageController@multiplefileupload');
+
+Route::get('revisarturnos', 'TurnosController@turnospresentes')->middleware('auth');
+/*
+
+Route::get('revisarturnos', function () {
+    return view('turnos.turnos');
+})->middleware('auth');
+*/
+
+
 
 
