@@ -121,6 +121,10 @@ class TurnosController extends Controller
 
                                      $turnospresentes = TurnoRegistroAsignado::where('RutOperador',   $operadorpresente  )-> paginate(100);
 
+                                   
+                                     $turnospresentes =  (array) $turnospresentes;
+
+
                                      // dd($turnospresentes);
 
                                   return view('turnos.turnos', compact('turnospresentes'));
