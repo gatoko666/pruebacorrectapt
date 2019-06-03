@@ -48,11 +48,7 @@
                                                 <br>
                                               
                                             </th>
-                                            <th class="text-center">
- 
-                                                    <br>
-                                                  
-                                                </th>
+                                          
                                                 <th class="text-center">
  
                                                     <br>
@@ -100,10 +96,7 @@
                                                 Correo 
                                             <br>                                           
                                         </th>        
-                                        <th class="text-center">
-                                                Estado 
-                                                <br>                                            
-                                            </th>
+                                        
                                             <th class="text-center">
                                                     Fecha Alta
                                                     <br>                                                
@@ -123,22 +116,12 @@
                             @foreach($detalleoperador as $op)
                             <tr>
                                 <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>                                 
-                                <td>{{$op->RutOperador}}</td>
-                                <td>{{$op->Correo}}</td>
-                                <td>
-                                  <?php
-                                $valorestado =$op->EstadoCuentaOperador;                            
-                                  if ( $valorestado == 1) {
-                                      echo "Activo";
-                                  }else
-                                  {
-                                    echo "Inactivo";
-                                  }
-                                  ?>
-                                 </td>                                
-                                <td>{{$op->FechaAltaOperador}}</td>
-                                                        
-                                <td>{{$op->LocacionOperador}}</td>  
+                                <td>{{$op->RutOperador}}</td>   
+                                           
+                                <td>{{$op->Correo}}</td>                                                   
+                                <td>{{$op->FechaAltaOperador}}</td>                                                        
+                                <td>{{$op->LocalizacionOperador}}</td>  
+                                
                                 <td>                                  
                                             <a href="{{ route('operadores.edit',$op)}}" class="btn btn-secondary">Editar</a> 
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
@@ -230,10 +213,7 @@
                                                                             Teléfono
                                                                             <br>                                                                        
                                                                         </th>
-                                                                        <th class="text-center">
-                                                                                Estado
-                                                                                <br>                                                                            
-                                                                            </th>
+                                                                      
                                                                             <th class="text-center">
                                                                                     Fecha de Alta
                                                                                     <br>                                                                                
@@ -340,21 +320,12 @@
                                                                               </div>
                                                                             </div> 
 
-                                                                            <div class="form-group row">
-                                                                              <label for="inputdescripcion" class="col-sm-2 col-form-label">Estado</label>
-                                                                              <div class="col-sm-5">
-                                                                                      <p align="justify"><select name="EstadoCuentaOperador" size="1">
-                                                                                              <option value="1"selected>Activo</option>
-                                                                                              <option value="2" >Inactivo</option>                                                                                             
-                                                                                              </select> </p>                                                                                
-                                                                              </div>
-                                                                            </div>                                                                            
-                                                                            
+                                                                        
       
                                                                           <div class="form-group row">
                                                                               <label for="inputlocalizacion" class="col-sm-2 col-form-label">Localización</label>
                                                                               <div class="col-sm-5">
-                                                                                <input type="text" name="LocacionOperador" class="form-control" id="inputlocalizacion"   onfocus="this.value=''" placeholder="Localización">
+                                                                                <input type="text" name="LocalizacionOperador" class="form-control" id="inputlocalizacion"   onfocus="this.value=''" placeholder="Localización">
                                                                               </div>
                                                                             </div>                                                     </div>
                                                                             <button type="submit" class="btn btn-primary ">Agregar</button>

@@ -13,20 +13,7 @@
                 Dashboard
             </a>
         </li>
-        <li>
-            <a href="#homeSubmenu0" data-toggle="collapse" aria-expanded="false">
-                <i class="fas fa-users"></i>
-                Trabajadores
-                <i class="fas fa-angle-down fa-pull-right"></i>
-            </a>
-            <ul class="collapse list-unstyled" id="homeSubmenu0">
-                <li>
-                    <a href="operadores">Administrar trabajadores</a>
-                </li>                   
-                
-               
-            </ul>
-        </li>
+   
 
         <li>
                 <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false">
@@ -41,6 +28,10 @@
                         <a href="generarequipotrabajo">generar equipo de trabajo</a>
                     </li>
                 -->
+                <li>
+                    <a href="operadores">Administrar trabajadores</a>
+                </li>                   
+                
 
                     <li>
                         <a href="generarturnos">Generar turnos</a>

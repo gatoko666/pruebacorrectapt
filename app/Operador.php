@@ -8,7 +8,7 @@ class Operador extends Model
 {
     protected $table = 'operador';
 
-    protected $primaryKey = 'IdOperador';
+    protected $primaryKey = 'RutOperador';
 
     protected $fillable = [
         'NombreOperador', 'ApellidoOperador',
@@ -20,6 +20,7 @@ class Operador extends Model
 
     ];
  
+    public $incrementing=false;
 
  
     

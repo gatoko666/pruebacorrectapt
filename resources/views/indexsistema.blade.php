@@ -219,13 +219,7 @@
                 </div>
             </div>
             <!--// Three-grids -->
-            <!-- Countdown -->
-            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
-                <h4 class="tittle-w3-agileits mb-4 text-white">Hora actual del servidor</h4>
-                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
-            </div>
-            <!--// Countdown -->
-            <!-- Copyright -->
+            
 
             @include('partials/footer')
 

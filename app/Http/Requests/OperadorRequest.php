@@ -27,13 +27,12 @@ class OperadorRequest extends FormRequest
             'Correo' => 'required|email',  
             'NombreOperador' => 'required',  
             'Password' => 'required',
-            'TelefonoOperador' => 'required|integer',
-            'EstadoCuentaOperador' => 'required',
+            'TelefonoOperador' => 'required|integer',            
             'NombreOperador' => 'required',
             'FechaAltaOperador' => '',
             'IdAdministrador' => '',
             'RutOperador' => 'required|cl_rut',
-            'LocacionOperador' => 'required|max:10',
+            'LocalizacionOperador' => 'required|max:10',
         ];
     }
 }

@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Operador;
-use App\OperadorExterno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\Turnos;
-use App\TiposDeTurnos;
-use App\TurnoDiaAsignado;
-use App\OperadorConTurno;
-use App\Operador_Turno;
-use App\TurnoAsignado;
 use Illuminate\Support\Arr;
-use App\Event;
-use Calendar;
+use App\TiposDeTurnos;
+use Illuminate\Support\Facades\DB;
+
+ 
+use App\TurnoRegistroAsignado;
+
 use Illuminate\Support\Facades\View;
 
 
@@ -39,81 +36,39 @@ class TurnosController extends Controller
                                             $operadorexterno=Auth::id();
                                             $detalleoperador = Operador::where('IdAdministrador', $operador)-> paginate(100);
                                             $detalletiposdeturnos = TiposDeTurnos::where('IdAdministrador', $operador)-> paginate(100); 
-                                            $detalleoperadorexterno = OperadorExterno::where('IdAdministrador', $operadorexterno)-> paginate(100);   
-
-                                            $events = [];
-                                            $data = Event::all();
-                                            if($data->count())
-                                             {
-                                                foreach ($data as $key => $value) 
-                                                {
-                                                    $events[] = Calendar::event(
-                                                        $value->title,
-                                                        true,
-                                                        new \DateTime($value->start_date),
-                                                        new \DateTime($value->end_date.'+1 day'),
-                                                        null,
-                                                        // Add color
-                                                     [
-                                                         
-                                                     ]
-                                                    );
-                                                }
-                                            }
-                                            $calendar = Calendar::addEvents($events);
-                                               // dd($calendar);
-
-                                            View::share('calendar');
-
+                                        
                                            
                                           
-                                             return view('turnos.generarturnos', compact('detalleoperador','detalletiposdeturnos','detalleoperadorexterno','calendar'));
+                                             return view('turnos.generarturnos', compact('detalleoperador','detalletiposdeturnos',));
 
                                                     
                                         }
 
 
 
-                        public function store(Request $request){        
-                        
-                         // $data=$request->all();
-
-                         $IdAdministrador=Auth::id();
-                         
-                          
-                        // $IdAdministrador->IdAdministrador=Auth::id();
-
-                    //  dd($request->all());
-                   // $data=$request->all();
-                  //  $lastid=TurnoAsignado::create($data)->id;
-
-
- /*
-                  $idobject=TurnoAsignado::findOrFail('NombreTrabajador',
-                  'NumeroSemana','MesDeLaSemanaAsignado',
-                  'AnoDeLaSemanaAsignado'
-                  ,$request->NombreTrabajadori, $request->NumeroSemana,$request->MesDeLaSemanaAsignado,$request->AnoDeLaSemanaAsignado)->first();
-*/
-                         
-                     // dd( $idobject);
-
-
-                   
-
+                        public function store(Request $request){   
+                            $operador=Auth::id();      
+                         //   $rutOperador=Operador::where('IdAdministrador', $operador);
+                          $iddetalletipoturno=TiposDeTurnos::where('IdAdministrador', $operador) ;                         
+                         $IdAdministrador=16;           
 
                         if(count($request->NombreTrabajadori) > 0)
                         {
                         foreach($request->NombreTrabajadori as $trabajador=>$t){
                          // dd($trabajador);
-
-
                             $data2=array(
 
                              // 'id'=>$lastid,
-                                'NombreTrabajador'=>$request->NombreTrabajadori[$trabajador],
-                                'NumeroSemana'=>$request->NumeroSemana,
-                                'MesDeLaSemanaAsignado'=>$request->MesDeLaSemanaAsignado,
-                                'AnoDeLaSemanaAsignado'=>$request->AnoDeLaSemanaAsignado,                                
+                              
+
+                              
+                             // 'RutOperador'=>$request->RutOperador[$trabajador],
+                             
+
+                            // 'NombreTrabajador'=>$request->NombreTrabajadori[$trabajador],
+                          //  'idDetalleTipoTurno'=>$IdAdministrador ,
+                                'RutOperador'=>$request->RutTrabajadori[$trabajador],
+                                'fechacreacion'=>now(),                                                 
                                 'nombreturnol'=>$request->nombreturnol[$trabajador],
                                 'nombreturnom'=>$request->nombreturnom[$trabajador],
                                 'nombreturnomm'=>$request->nombreturnomm[$trabajador],
@@ -121,104 +76,20 @@ class TurnosController extends Controller
                                 'nombreturnov'=>$request->nombreturnov[$trabajador],
                                 'nombreturnos'=>$request->nombreturnos[$trabajador],
                                 'nombreturnod'=>$request->nombreturnod[$trabajador],
-                                'IdAdministrador'=>$IdAdministrador ,
-
+                                'NumeroSemana'=>$request->NumeroSemana,
+                                'MesDeLaSemanaAsignado'=>$request->MesDeLaSemanaAsignado,
+                                'AnoDeLaSemanaAsignado'=>$request->AnoDeLaSemanaAsignado,              
+                                                      
+                                                             
+                            );      
+                          // dd($data2);                 
+                            TurnoRegistroAsignado::insert($data2); 
                                  
-                                                              
-                            );  
-                            
-                            
-                            
-                            TurnoAsignado::insert($data2); 
-
-                   // dd($data2);
-                  
-                    /*
-                   if (count($idobject) > 0 ) {
-                    TurnoAsignado::update($data2); 
-                    return redirect()->back()->with('success','data insert successfully');
-
-                   }else {
-                   
-                    TurnoAsignado::insert($data2); 
-                    return redirect()->back()->with('success','data insert successfully');
-                   } 
-
-                   */
-                          
-                        //TurnoAsignado::firstOrCreate($data2);                            
-
                       }
                         }                  
 
                         return redirect()->back()->with('success','data insert successfully');
-
-
-
-
-                        
-                        
-                         
-
-                       
-
-
-
-
-
-                           // $OperadorConTurno= new OperadorConTurno;                          
-                         //   $OperadorConTurno=$request->NombreTrabajador;   
-                        //    $OperadorConTurno->IdAdministrador=Auth::id();   
- 
-
-                           /*
-                        $operador=Auth::id(); 
-                        dd($request->NombreTrabajadori);
-
-
-                        $detalleoperador = Operador::where('IdAdministrador', $operador)-> paginate(100);
-
-                        $OperadorConTurno= new OperadorConTurno;
-                            foreach ($detalleoperador as $op ) {
-                             
-                                                        
-                            $OperadorConTurno=$request->NombreTrabajador;   
-                            $OperadorConTurno->IdAdministrador=Auth::id();     
-                              
-                            $OperadorConTurno->save();
-
-                            }
-*/
-                            
-
-
-
-
-                                                 
-                          //  dd($OperadorConTurno);
-                       //  $OperadorConTurno->save();
- 
-/*
-                           $dataSet = [];
-                           foreach ($OperadorConTurno as $OpCT) {
-                               $dataSet[] = [
-                                   'NombreTrabajador'  => $NombreTrabajador=$request->NombreTrabajador,
-                                   'IdAdministrador'    => $IdAdministrador->IdAdministrador=Auth::id(),
-                                 
-                               ];
-                           }
-                           
-                           DB::table('operadorconturno')->insert($dataSet);
-
-*/
-
-
-
-
-                                                      
-                        //   return redirect('generarturnos')->with('success','Turno  Agregado correctamente');
-
-                        }
+            }
 
 
 
@@ -228,11 +99,30 @@ class TurnosController extends Controller
 
                                   $request->user()->authorizeRoles([ 'admin']);
 
-                                  $operador=Auth::id();
+                                  $IdAAdministrador=Auth::id();
 
-                                  $turnospresentes = TurnoAsignado::where('IdAdministrador', $operador)-> paginate(10);   
-                                          
-                                                        
+                             //     $detalleoperador = Operador::where('IdAdministrador', $IdAdministrador)-> paginate(100);
+
+                             
+
+
+                              //    $turnospresentes = TurnoRegistroAsignado::where('RutOperador', $detalleoperador)-> paginate(10); 
+                              
+                              $operadorpresente =DB::table('operador')
+                              ->join('users', 'operador.IdAdministrador', '=', 'users.id')                          
+                              ->where('IdAdministrador', '=',$IdAAdministrador )
+                              ->select('RutOperador')
+                              ->get();
+
+
+
+
+                                  //    dd($turnospresentes);
+
+                                     $turnospresentes = TurnoRegistroAsignado::where('RutOperador',   $operadorpresente  )-> paginate(100);
+
+                                     // dd($turnospresentes);
+
                                   return view('turnos.turnos', compact('turnospresentes'));
 
                                   

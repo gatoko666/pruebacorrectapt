@@ -15,7 +15,7 @@ class OperadorController extends Controller
         {
             $request->user()->authorizeRoles([ 'admin']);
             $operador=Auth::id();
-            $detalleoperador = Operador::where('IdAdministrador', $operador)-> paginate(10);
+            $detalleoperador = Operador::where('IdAdministrador', $operador)-> paginate(100);
                            // $detalleoperador = Operador:: paginate(10);                  
                                 return view('operadores/indexoperador', compact('detalleoperador'));                       
                         }
@@ -58,15 +58,14 @@ class OperadorController extends Controller
 
                                 $operador= new Operador;
                                 $operador->NombreOperador=$request->NombreOperador;                                
-                                
+                                $operador->RutOperador=$request->RutOperador;      
                                 $operador->Correo=$request->Correo;
-                                $operador->TelefonoOperador=$request->TelefonoOperador;
-                                $operador->EstadoCuentaOperador=$request->EstadoCuentaOperador;
+                                $operador->TelefonoOperador=$request->TelefonoOperador;                               
                                 $operador->FechaAltaOperador=now();
                                 $operador->Password=$request->Password;
                                 $operador->IdAdministrador=Auth::id();
                                 $operador->RutOperador=$request->RutOperador;
-                                $operador->LocacionOperador=$request->LocacionOperador;
+                                $operador->LocalizacionOperador=$request->LocalizacionOperador;
                              //  dd($operador);
                                 $operador->save();
 
@@ -113,7 +112,7 @@ class OperadorController extends Controller
                         }
                         
 
-                        public function update(Request $request,  $IdOperador)
+                        public function update(Request $request,  $RutOperador)
                         {       
                           
                             $validatedData = $request->validate([
@@ -123,7 +122,7 @@ class OperadorController extends Controller
                                 'EstadoCuentaOperador' => '',
 
                             ]);
-                            Operador::where('IdOperador', $IdOperador)->update($validatedData);
+                            Operador::where('RutOperador', $RutOperador)->update($validatedData);
                             return redirect('operadores')->with('success', 'Operador Externo  es actualizado correctamente');
                               }
 
@@ -133,9 +132,9 @@ class OperadorController extends Controller
  
 
 
-                              public function destroy($IdOperador)
+                              public function destroy($RutOperador)
                               {
-                                Operador::where('IdOperador',$IdOperador)->delete();
+                                Operador::where('RutOperador',$IdOperador)->delete();
                           
                                   return redirect('operadores')->with('success','Operador eliminado correctamente');       
 

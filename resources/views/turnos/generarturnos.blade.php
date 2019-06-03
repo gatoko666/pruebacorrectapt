@@ -1,8 +1,7 @@
 
     @include('partials/header')
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+   
     
     <body>
         <div class="se-pre-con"></div>
@@ -47,20 +46,7 @@
                             </div>
                             <div class="container">
                                     <div class="row">
-                                      <div class="col-sm">
-                                            Fecha
-    
-                                            <input id="datepicker1"  onfocus="this.value=' '"  width="276" />
-                                            <script>
-                                                $('#datepicker1').datepicker({
-                                                    uiLibrary: 'bootstrap4'
-                                                });
-                                            </script>
-                                            <button type="button" class="btn btn-primary">
-                                                    Buscar
-                                                       
-                                                    </button> 
-                                      </div>
+                                  
                                       <div class="col-sm">
                                         Semana
                                       </div>
@@ -75,7 +61,7 @@
                                                     </select> </p>
                                       </div>
                                       <div class="col-sm">
-                                            Semana
+                                            Mes
                                           </div>
                                           
                                           <div class="col-sm">
@@ -96,7 +82,7 @@
                                                         </select> </p>
                                           </div>
                                           <div class="col-sm">
-                                                Semana
+                                                Año
                                               </div>
                                               
                                               <div class="col-sm">
@@ -113,7 +99,13 @@
                         <thead>
                             <tr>
                                 <th>Trabajadores</th>
-                                <input   name="DiaSemana[]"  value="lunes"  type="hidden"  >
+                                <input   name="RutOperador[]"  value="RutOperador"  type="hidden"  >
+                                <th name="RutOperador[]" value="RutOperador" class="text-center">
+                                    Rut Operador
+                                    
+                                    <br>
+                                    
+                                </th><input   name="DiaSemana[]"  value="martes"  type="hidden"  >
                                 <th name="DiaDeLaSemanaAsignado[]" value="lunes" class="text-center">
                                     Lunes
                                     
@@ -168,7 +160,9 @@
                                                           
                                         @foreach($detalleoperador as $op) 
                                         <tr>       <input   name="NombreTrabajadori[]"  value="{{$op->NombreOperador}}"  type="hidden"  >  
-                                            <th class="text-nowrap" name="NombreTrabajador"   scope="row">{{$op->NombreOperador}}</th>                                                                                      
+                                            <th class="text-nowrap" name="NombreTrabajador"   scope="row">{{$op->NombreOperador}}</th> 
+                                            <input   name="RutTrabajadori[]"  value="{{$op->RutOperador}}"  type="hidden"  >   
+                                            <th class="text-nowrap" name="RutTrabajador[]"  value="{{$op->RutOperador}}"  scope="row">{{$op->RutOperador}}</th>                                                                                      
                                             
                                                                                                                         
                                                 <td>
@@ -294,7 +288,7 @@
                     <button type="submit"class="btn btn-primary">Publicar turnos</button>                   
                 </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar Borrador turnos</button>          
+                         
          </section>         
 
         
@@ -381,29 +375,7 @@
     
 
 
-
-        <div class="container">
-            @if (\Session::has('success'))
-                  <div class="alert alert-success">
-                    <p>{{ \Session::get('success') }}</p>
-                  </div><br />
-                 @endif
-               <div class="panel panel-default">
-                     <div class="panel-heading">
-                         <h2>Laravel  Calendar </h2>
-                     </div>
-                     <div class="panel-body" >
-                        {!! $calendar->calendar() !!}
-                        {!! $calendar->calendar() !!}
-                        {!! $calendar->script() !!}
-
-                    </div>
-                </div>
-            </div>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-            {!! $calendar->script() !!}
+ 
 
 
 

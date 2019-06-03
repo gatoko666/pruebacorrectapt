@@ -108,14 +108,11 @@
 
                                 
 
-                                @foreach($turnospresentes as $op)
-
-                                @if (count($op->NumeroSemana)>0)
-                                    
-                                @endif
+                                @foreach($turnospresentes as $op)                               
 
                                 <tr>
-                                    <th class="text-nowrap" scope="row">{{$op->NombreTrabajador}}</th>                                 
+                                    <th class="text-nowrap" scope="row">{{$op->NombreOperador}}</th>    
+                                    <th class="text-nowrap" scope="row">{{$op->RutOperador}}</th>                                                                    
                                     <td>{{$op->nombreturnol}}</td>
                                     <td>{{$op->nombreturnom}}</td>
                                     <td>{{$op->nombreturnomm}}</td>                                                            
